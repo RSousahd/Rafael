@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedreiro de Elite - Área Profissional</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Profissionais especializados em construção, pintura e reforma em Aparecida de Goiânia, Setor Garavelo, Bueno, Marista e Jardim América.">
+    <meta name="keywords" content="construção, pintura, reforma, pedreiro, pintor, mestre de obras, Aparecida de Goiânia, Setor Garavelo, Bueno, Marista, Jardim América">
+    <meta name="author" content="Nome da Sua Empresa">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph para redes sociais -->
+    <meta property="og:title" content="Construção, Pintura e Reforma em Aparecida de Goiânia e Região">
+    <meta property="og:description" content="Especialistas em construção e reforma para casas e comércios na região do Setor Garavelo, Bueno e Jardim América.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pdepedreiro.com.br">
+    <meta property="og:image" content="https://pdepedreiro.com.br/img/Rafael SOS.png"> <!-- Substituir pela imagem do seu site -->
+  
+  <!-- Favicon -->
+<link rel="icon" type="image/png" href="img/favicon/gd.png">
+  <!-- Adicione isso no <head> do seu HTML se ainda não tiver -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    /* Estilo do Preloader */
+#preloader {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: #111;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+/* Ajuste da Logo no Preloader */
+#preloader img {
+  width: 180px;
+  animation: pulse 1.5s infinite alternate ease-in-out;
+}
+
+/* Texto animado */
+.typing {
+  font-size: 1.5em;
+  margin-top: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #fff;
+  width: 0;
+  animation: typing 2s steps(12, end) forwards, blinkCursor 0.7s infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 160px; }
+}
+
+@keyframes blinkCursor {
+  50% { border-color: transparent; }
+}
+
+/* Loader Circular */
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #f39c12;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-top: 20px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Animação da Logo */
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.1); opacity: 1; }
+}
+
+/* Transição ao entrar no site */
+#site-content {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 15px 0;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+header .container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+.header-hidden {
+  transform: translateY(-100%);
+}
+
+/* Logo */
+header .logo img {
+  width: 150px;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Animação da Logo */
+@keyframes moveLogo {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(10px); }
+}
+
+/* Menu Desktop */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu li {
+  display: inline;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s;
+  padding: 10px;
+}
+
+.menu a:hover {
+  color: #f39c12;
+  text-shadow: 0 0 10px rgba(243, 156, 18, 0.8);
+}
+
+/* Menu Responsivo */
+.menu-icon {
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+  color: white;
+}
+
+/* Esconder o checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #333;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .menu li {
+    margin: 10px 0;
+  }
+
+  #menu-toggle:checked + .menu-icon + nav .menu {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
+/* --- Seção Parceria --- */
+#parceria {
+  padding: 80px 20px;
+  background: #222;
+  text-align: center;
+  color: rgb(51, 1, 253);
+}
+
+#parceria h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+#parceria p {
+  font-size: 1.2em;
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+#parceria .parceiros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.parceiro {
+  width: 150px;
+  height: 150px;
+  background: white;
+  margin: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.parceiro:hover {
+  transform: scale(1.1);
+}
+
+/* --- Hero / Apresentação --- */
+.hero {
+  position: relative;
+  height: 500px;
+  background: url('img/hero.jpg') no-repeat center center/cover;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero .overlay h1 {
+  color: #fff;
+  font-size: 3em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hero .overlay p {
+  color: #ddd;
+  font-size: 1.5em;
+}
+
+/* --- Botão WhatsApp --- */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(45deg, #25d366, #128C7E);
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+}
+
+/* Mostrar botão do WhatsApp ao rolar */
+.show-whatsapp {
+  display: block !important;
+}
+
+    
+    /* Hero / Apresentação com Background Impactante */
+    .hero {
+      position: relative;
+      height: 500px;
+      background: url('img/hero.jpg') no-repeat center center/cover; /* Substitua pelo caminho da sua imagem impactante */
+    }
+    
+/* Adiciona e posiciona o boneco */
+.boneco {
+  position: absolute;
+  bottom: 0; /* Mantém no chão da seção */
+  left: 10%; /* Posição inicial */
+  width: 150px; /* Tamanho ajustável */
+  height: auto;
+  animation: moveBoneco 3s infinite ease-in-out alternate; /* Animação */
+}
+/* Animação do boneco se movendo */
+@keyframes moveBoneco {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+  100% {
+    transform: translateX(20px) scale(1.1); /* Move um pouco e aumenta ligeiramente */
+  }
+}
+    .hero .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .hero .overlay h1 {
+      color: #fff;
+      font-size: 3em;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .hero .overlay p {
+      color: #ddd;
+      font-size: 1.5em;
+    }
+    
+    /* Configuração geral do container */
+  .slider-container {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    background: #333;
+    padding: 10px 0;
+  }
+
+  /* Slider animado */
+  .slider {
+    display: flex;
+    gap: 30px; /* Espaço entre os itens */
+    animation: scroll 25s linear infinite;
+    width: max-content;
+  }
+
+  /* Estilização dos slides */
+  .slide {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 10px 20px;
+    background: #007bff;
+    border-radius: 5px;
+    white-space: nowrap;
+  }
+
+  /* Animação contínua */
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+    
+    /* Banner de Chamada à Ação */
+    .banner {
+      background: linear-gradient(90deg, #ff6600, #ffcc00);
+      padding: 40px;
+      text-align: center;
+      color: #222;
+    }
+    .banner h2 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    .banner p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+    .banner .cta-btn {
+      background: #222;
+      color: #fff;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .banner .cta-btn:hover {
+      background: #444;
+    }
+    
+    /* Bloco Dinâmico Criativo */
+    .dynamic-block {
+      background: linear-gradient(45deg, #ff6600, #ffcc00);
+      color: #222;
+      padding: 40px;
+      margin: 50px auto;
+      border-radius: 10px;
+      max-width: 1200px;
+      text-align: center;
+      font-size: 1.5em;
+      animation: pulse 2s infinite alternate;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.05); }
+    }
+    .dynamic-block strong {
+      color: #0044cc;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Seções Gerais */
+    .section {
+      padding: 60px 20px;
+    }
+    .section h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #222;
+    }
+    .section p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+    
+    /* Seção Sobre */
+    #about { background: #fff; }
+    
+    /* Seção Serviços */
+    #services { background: #f9f9f9; }
+    #services .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    #services .service {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    #services .service:hover {
+      transform: scale(1.05);
+    }
+    #services .service h3 {
+      margin-bottom: 10px;
+      color: #ff6600;
+    }
+    
+    /* Estilizando a grade do portfólio */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    justify-content: center;
+}
+
+/* Estilizando os itens do portfólio */
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efeito ao passar o mouse */
+.portfolio-item:hover {
+    transform: scale(1.05);
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+    
+    /* Seção Depoimentos */
+    #testimonials { background: #f9f9f9; }
+    #testimonials .testimonial {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      font-style: italic;
+    }
+
+    /* Estilizando a seção */
+#nossos-servicos {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #f8f9fa;
+}
+
+/* Título e subtítulo */
+.section-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+/* Grade de serviços */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Blocos de serviço */
+.service {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.service:hover {
+  transform: translateY(-5px);
+}
+
+/* Ícones de serviço */
+.service-icon {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  color: #f39c12;
+}
+
+/* Listagem de serviços */
+.service ul {
+  list-style: none;
+  padding: 0;
+}
+
+.service ul li {
+  font-size: 1em;
+  color: #444;
+  padding: 5px 0;
+}
+
+    
+    /* Seção Contato */
+    #contact { background: #fff; }
+    #contact form {
+      max-width: 600px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    #contact input, #contact textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    #contact button {
+      padding: 15px;
+      background: #ff6600;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    #contact button:hover {
+      background: #ffcc00;
+    }
+    
+    /* Estilizando o bloco de orçamento */
+.orçamento-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+/* Caixa do orçamento */
+.orçamento-box {
+  background: white;
+  padding: 20px;
+  width: 350px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+}
+
+/* Botão de fechar */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Formulário */
+.orçamento-box input,
+.orçamento-box select,
+.orçamento-box textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.orçamento-box button {
+  background: #f39c12;
+  color: white;
+  font-size: 2.1em;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.orçamento-box button:hover {
+  background: #e67e22;
+}
+#parceria {
+    background-color: #f8f8f8;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.parceria-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.parceria-item {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+}
+
+.parceria-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #25D366;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.parceria-btn:hover {
+    background: #1da851;
+}
+
+    /* Área de Vídeo com Efeito de Fundo Integrado */ 
+    .video-container {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .video-container video {
+      width: 80%;
+      max-width: 800px;
+      mix-blend-mode: multiply; /* Integra o vídeo com o fundo da página */
+      background: none;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    /* Rodapé */
+    footer {
+      background: #222;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    footer .footer-content {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: auto;
+    }
+    footer .footer-section {
+      flex: 1;
+      margin: 10px;
+    }
+    footer .footer-section h3 {
+      margin-bottom: 10px;
+    }
+    footer .footer-section p {
+      font-size: 0.9em;
+      color: #ddd;
+    }
+    /* Estilos do Bloco de Emergência */
+.bloco-emergencia {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+}
+
+.bloco-emergencia .bloco-conteudo h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+.bloco-emergencia p {
+    font-size: 16px;
+    color: #666;
+}
+
+.bloco-emergencia button {
+    margin: 10px 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #ff5733;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.bloco-emergencia button:hover {
+    background: #e04e2a;
+}
+
+  </style>
+</head>
+<body>
+ <!-- Preloader (antes do conteúdo principal) -->
+ <div id="preloader">
+  <img src="Img/Rafael SOS.png" alt="Carregando..."> <!-- Substitua pelo caminho correto da sua logo -->
+  <div class="typing">Carregando...</div> <!-- Texto animado -->
+  <div class="loader"></div> <!-- Loader circular -->
+</div>
+ <!-- Cabeçalho Responsivo -->
+<header>
+  <div class="container">
+      <div class="logo">
+          <img src="img/Rafael SOS.png" alt="Logo Rafael SOS"> <!-- Substitua pelo caminho correto da logo -->
+      </div>
+
+      <!-- Checkbox para ativar o menu móvel -->
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+      <!-- Menu de Navegação -->
+      <nav>
+          <ul class="menu">
+              <li><a href="#home">Início</a></li>
+              <li><a href="#about">Sobre</a></li>
+              <li><a href="#services">Serviços</a></li>
+              <li><a href="#portfolio">Portfólio</a></li>
+              <li><a href="#contact">Contato</a></li>
+              <li><a href="#parceria">Parceria</a></li> <!-- Novo item do menu -->
+          </ul>
+      </nav>
+  </div>
+</header>
+
+
+  <!-- Seção Hero -->
+<section class="hero">
+  <div class="overlay">
+    <h1>Você Preciso de um profissional com multiplas habilidade? </h1>
+    <p><strong>RAFAEL SOS</strong> é sua escolha <strong> CERTA!</strong></p>
+  </div>
+  <img src="Img/bonego.png" alt="Boneco animado" class="boneco">
+</section>
+
+
+  <!-- Slider de Mensagens -->
+<section class="slider-container">
+  <div class="slider">
+    <div class="slide">Tradição e Qualidade em Cada Detalhe</div>
+    <div class="slide">Seu serviço é pequeno? é com RAFAEL SOS</div>
+    <div class="slide">Precisa de um profissional? é com RAFAEL SOS</div>
+    <!-- Duplicação para efeito infinito -->
+    <div class="slide">Tradição e Qualidade em Cada Detalhe</div>
+    <div class="slide">Seu serviço é pequeno? é com RAFAEL SOS</div>
+    <div class="slide">Precisa de um profissional? é com RAFAEL SOS</div>
+  </div>
+</section>
+
+  <!-- Banner de Chamada à Ação -->
+  <section class="banner">
+    <h2>Estou Pronto Para Iniciar Seu Serviço</h2>
+    <p>Contate-nos e vamos planejar juntos o sucesso da sua obra</p>
+    <a href="#contact" class="cta-btn">Solicite um Orçamento</a>
+  </section>
+
+  <!-- Bloco Dinâmico Criativo -->
+  <section class="dynamic-block">
+    <p><strong>Não deixe Seu serviço com qualquer Um</strong></p>
+    <p>Escolha o Melhor de Goias! <br><strong>RAFAEL SOS</strong>!</p>
+  </section>
+
+  <!-- Seção Sobre -->
+  <section id="about" class="section">
+    <h2>Quem Somos</h2>
+    <p>Sou especialistas em construção e reformas de alta qualidade, com anos de experiência e comprometido com os melhores resultados.</p>
+  </section>
+
+  <!-- Seção Serviços -->
+  <section id="services" class="section">
+    <h2>Nossos Serviços</h2>
+    <div class="services-grid">
+      <div class="service">
+        <h3>Construção de Obras</h3>
+        <p>Realizamos projetos de construção de alta qualidade, desde pequenas reformas, Seviços diversos no ramo da construção civil.</p>
+      </div>
+      <div class="service">
+        <h3>Reformas Residenciais</h3>
+        <p>Transformamos seu lar com reformas que agregam valor e bem-estar, com acabamento impecável.</p>
+      </div>
+      <div class="service">
+        <h3>Instalações Elétricas</h3>
+        <p>Garantimos instalações elétricas seguras e eficientes, atendendo às normas mais rigorosas.</p>
+      </div>
+      <div class="service">
+        <h3>Serviços de Pintura</h3>
+        <p>Realizamos Pintura e pente fino. Vamos fazer Uma repaginada no Seu imovel?. <strong>TEMOS DISCONTOS PARA EMPRESAS..</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Portfólio -->
+<section id="portfolio" class="section">
+  <h2>Nosso Portfólio</h2>
+  <div class="portfolio-grid">
+      <div class="portfolio-item">
+          <img src="img/Design sem nome/1.png" alt="Projeto 1">
+      </div>
+      <div class="portfolio-item">
+          <img src="img/Design sem nome/2.png" alt="Projeto 2">
+      </div>
+      <div class="portfolio-item">
+          <img src="img/Design sem nome/3.png" alt="Projeto 3">
+      </div>
+      <div class="portfolio-item">
+          <img src="img/Design sem nome/4.png" alt="Projeto 4">
+      </div>
+      <div class="portfolio-item">
+          <img src="img/Design sem nome/5.png" alt="Projeto 5">
+      </div>
+      <div class="portfolio-item">
+          <img src="img/Design sem nome/6.png" alt="Projeto 6">
+      </div>
+      <div class="portfolio-item">
+          <img src="img/Design sem nome/7.png" alt="Projeto 7">
+      </div>
+      <div class="portfolio-item">
+          <img src="img/Design sem nome/8.png" alt="Projeto 8">
+      </div>
+      <div class="portfolio-item">
+        <img src="img/Design sem nome/d.png" alt="Projeto 6">
+    </div>
+    <div class="portfolio-item">
+        <img src="img/Design sem nome/s.png" alt="Projeto 7">
+    </div>
+    <div class="portfolio-item">
+        <img src="img/Design sem nome/f.png" alt="Projeto 8">
+    </div>
+    <div class="portfolio-item">
+      <img src="img/Design sem nome/1.jpg" alt="Projeto 8">
+  </div>
+  <div class="portfolio-item">
+    <img src="img/Design sem nome/2.jpg" alt="Projeto 6">
+</div>
+<div class="portfolio-item">
+    <img src="img/Design sem nome/k.png" alt="Projeto 7">
+</div>
+<div class="portfolio-item">
+    <img src="img/Design sem nome/4.jpg" alt="Projeto 8">
+</div>
+  </div>
+</section>
+
+<!-- Seção Parceria -->
+<section id="parceria" class="section">
+  <h2>Seja Nosso Parceiro</h2>
+  <p>Junte-se a nós e expanda suas oportunidades de negócios. Oferecemos parcerias estratégicas para profissionais e empresas.</p>
+  
+  <div class="parceria-container">
+      <div class="parceria-item">
+          <h3>Profissionais</h3>
+          <p>Se você é um especialista na área e quer oferecer seus serviços, entre em contato.</p>
+      </div>
+
+      <div class="parceria-item">
+          <h3>Empresas</h3>
+          <p>Grandes e pequenas empresas podem se unir ao nosso projeto para crescerem juntas.</p>
+      </div>
+  </div>
+
+  <a href="#contact" class="parceria-btn">Quero ser parceiro</a>
+</section>
+
+  <!-- Seção Depoimentos -->
+  <section id="testimonials" class="section">
+    <h2>O que nossos clientes dizem</h2>
+    <div class="testimonial">
+      <p>"O serviço foi impecável e superou nossas expectativas. A equipe foi extremamente profissional em todas as fases do projeto."</p>
+      <p>- João Silva</p>
+    </div>
+  </section>
+
+  <section id="nossos-servicos" class="section">
+    <h2 class="section-title">Nossos Serviços</h2>
+    <p class="section-subtitle">Excelência em cada detalhe, do planejamento à execução.</p>
+    
+    <div class="services-grid">
+      <!-- Serviço 1: Reformas -->
+      <div class="service">
+        <div class="service-icon">🏠</div>
+        <h3>Reformas e Ampliações</h3>
+        <p>Transformamos espaços com qualidade e segurança.</p>
+        <ul>
+          <li>Reformas residenciais e comerciais</li>
+          <li>Ampliações e modernizações</li>
+          <li>Melhorias em áreas de lazer</li>
+          <li>Construção e manutenção de muros e calçadas</li>
+        </ul>
+      </div>
+  
+      <!-- Serviço 2: Pintura -->
+      <div class="service">
+        <div class="service-icon">🎨</div>
+        <h3>Pintura Profissional</h3>
+        <p>Acabamentos impecáveis para renovar seu ambiente.</p>
+        <ul>
+          <li>Pintura acetinada e lisa</li>
+          <li>Texturas e efeitos especiais</li>
+          <li>Reformas em pintura</li>
+          <li>Revitalização de fachadas</li>
+        </ul>
+      </div>
+  
+      <!-- Serviço 3: Elétrica -->
+      <div class="service">
+        <div class="service-icon">⚡</div>
+        <h3>Instalação Elétrica</h3>
+        <p>Soluções seguras e eficientes para sua instalação elétrica.</p>
+        <ul>
+          <li>Instalações residenciais e comerciais</li>
+          <li>Manutenção elétrica preventiva e corretiva</li>
+          <li>Quadros de distribuição</li>
+          <li>Trabalho exclusivo com instalações monofásicas</li>
+        </ul>
+      </div>
+  
+      <!-- Serviço 4: Diversos -->
+      <div class="service">
+        <div class="service-icon">🔧</div>
+        <h3>Serviços Complementares</h3>
+        <p>Pequenos serviços que fazem toda a diferença.</p>
+        <ul>
+          <li>Instalação de forro PVC</li>
+          <li>Pequenos reparos e ajustes</li>
+          <li>Construção de barracões</li>
+          <li>Calçadas e acabamentos</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  
+
+ <!-- Seção Contato -->
+<section id="contact" class="section">
+  <h2>Entre em Contato</h2>
+  <form>
+      <input type="text" placeholder="Seu Nome" required>
+      <input type="email" placeholder="Seu E-mail" required>
+      <input type="tel" placeholder="Seu Telefone" required> <!-- Adicionado campo de telefone -->
+      <textarea placeholder="Sua Mensagem" required></textarea>
+      <button type="submit">Enviar</button>
+  </form>
+</section>
+
+
+  <!-- Área de Vídeo com Botão de Play -->
+<div class="video-container">
+  <video id="meuVideo" width="80%" controls>
+    <source src="seu-video.mp4" type="video/mp4">
+    Seu navegador não suporta a reprodução de vídeos.
+  </video>
+  <div class="play-button" id="playButton">&#9658;</div>
+</div>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Rafael SOS Pedreiro</h3>
+        <p>Comprometidos com a excelência e qualidade em todas as obras.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Links Rápidos</h3>
+        <p><a href="#about">Sobre</a></p>
+        <p><a href="#services">Serviços</a></p>
+        <p><a href="#portfolio">Portfólio</a></p>
+        <p><a href="#contact">Contato</a></p>
+      </div>
+      <div class="footer-section">
+        <h3>Contato</h3>
+        <p>Email: sosresolverr@gmail.com</p>
+        <p>Telefone: (62) 985558320</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bloco Emergência 24H -->
+<div id="bloco-emergencia" class="bloco-emergencia">
+  <div class="bloco-conteudo">
+      <h2>Precisa de um Profissional Urgente?</h2>
+      <p>Oferecemos atendimento emergencial em até 24 horas.</p>
+      <button onclick="chamarEmergencia()">Solicitar Agora</button>
+      <button onclick="fecharBloco()">Fechar</button>
+  </div>
+</div>
+
+
+  <!-- Bloco de Planilha de Orçamento -->
+<div id="orçamento-popup" class="orçamento-container">
+  <div class="orçamento-box">
+    <span class="close-btn" onclick="fecharOrcamento()">✖</span>
+    <h2>Solicite seu Orçamento</h2>
+    <p>Preencha os detalhes abaixo e entraremos em contato.</p>
+
+    <form id="orcamento-form">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" placeholder="Seu nome" required>
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" placeholder="Seu e-mail" required>
+
+      <label for="telefone">Telefone:</label>
+      <input type="tel" id="telefone" placeholder="Seu telefone" required>
+
+      <label for="servico">Tipo de Serviço:</label>
+      <select id="servico" required>
+        <option value="">Selecione um serviço</option>
+        <option value="Reformas">Reformas e Ampliações</option>
+        <option value="Pintura">Construção</option>
+        <option value="Eletrica">Instalação Elétrica</option>
+        <option value="Diversos">Serviços Diversos</option>
+        <option value="Reformas">Pedreiro</option>
+        <option value="Pintura">Forros</option>
+        <option value="Eletrica">Varios serviços</option>
+        <option value="Diversos">Construção de piscina</option>
+      </select>
+
+      <label for="detalhes">Detalhes do Serviço:</label>
+      <textarea id="detalhes" placeholder="Descreva o serviço desejado..." required></textarea>
+
+      <button type="submit">Solicitar Orçamento</button>
+    </form>
+  </div>
+</div>
+
+
+
+
+<!-- Botão flutuante do WhatsApp -->
+<a href="https://wa.me/5562985558320" target="_blank" class="whatsapp-button" id="whatsappButton">
+  &#x1F4AC;
+</a>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var whatsappButton = document.getElementById("whatsappButton");
+
+    // Mostrar o botão após 5 segundos (independente do scroll)
+    setTimeout(function() {
+        whatsappButton.classList.add("show-whatsapp");
+    }, 5000);
+
+    // Mostrar o botão ao rolar 100px para baixo
+    window.addEventListener("scroll", function() {
+        if (window.scrollY > 100) {
+            whatsappButton.classList.add("show-whatsapp");
+        } else {
+            whatsappButton.classList.remove("show-whatsapp");
+        }
+    });
+});
+</script>
+
+
+<script>
+  const video = document.getElementById('meuVideo');
+  const playButton = document.getElementById('playButton');
+
+  playButton.addEventListener('click', () => {
+    video.play();
+    playButton.style.display = 'none';
+  });
+
+  video.addEventListener('ended', () => {
+    playButton.style.display = 'flex';
+  });
+
+  video.addEventListener('click', () => {
+    if (video.paused) {
+      video.play();
+      playButton.style.display = 'none';
+    } else {
+      video.pause();
+      playButton.style.display = 'flex';
+    }
+  });
+</script>
+<script>
+  // Exibir o bloco de orçamento após 2 segundos
+  setTimeout(() => {
+    document.getElementById("orçamento-popup").style.visibility = "visible";
+    document.getElementById("orçamento-popup").style.opacity = "1";
+  }, 20000);
+
+  // Função para fechar o bloco
+  function fecharOrcamento() {
+    document.getElementById("orçamento-popup").style.opacity = "0";
+    setTimeout(() => {
+      document.getElementById("orçamento-popup").style.visibility = "hidden";
+    }, 500);
+  }
+
+  // Capturar envio do formulário
+  document.getElementById("orcamento-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Evita o recarregamento da página
+    alert("Solicitação enviada com sucesso! Entraremos em contato.");
+    fecharOrcamento(); // Fecha o popup após enviar
+  });
+</script>
+
+ <!-- JavaScript para ocultar o preloader e exibir o site -->
+ <script>
+  setTimeout(() => {
+    document.getElementById("preloader").style.display = "none";
+    let siteContent = document.getElementById("site-content");
+    siteContent.style.display = "block";
+    siteContent.style.opacity = "1"; // Transição suave de entrada
+  }, 4500); // Tempo em milissegundos (4,5 segundos)
+</script>
+
+<script>
+  document.addEventListener("mouseleave", function(event) {
+      if (event.clientY < 10) { // Detecta quando o mouse sai do topo da página
+          document.getElementById("bloco-emergencia").style.display = "block";
+      }
+  });
+
+  function fecharBloco() {
+      document.getElementById("bloco-emergencia").style.display = "none";
+  }
+
+  function chamarEmergencia() {
+      // Número do WhatsApp (substitua pelo correto)
+      let telefone = "5562991494589"; // Exemplo: 55 (Brasil) + 11 (DDD) + 999999999 (número)
+
+      // Mensagem personalizada para o WhatsApp
+      let mensagem = `🚨 *Pedido de Emergência!* 🚨\n\n`;
+      mensagem += `🛠️ *Serviços desejados:*\n`;
+      mensagem += `✅ Manutenção elétrica\n`;
+      mensagem += `✅ Reparo hidráulico\n`;
+      mensagem += `✅ Troca de fechadura\n`;
+      mensagem += `✅ Pintura urgente\n\n`;
+      mensagem += `📍 *Endereço:* (informe aqui)\n`;
+      mensagem += `📞 *Telefone:* (informe aqui)\n`;
+      mensagem += `💰 *Orçamento:* Aguardo valores\n`;
+
+      // Codifica a mensagem para a URL do WhatsApp
+      let url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
+      
+      // Redireciona para o WhatsApp
+      window.open(url, "_blank");
+
+      // Fecha o bloco de emergência
+      fecharBloco();
+  }
+</script>
+
+
+
+</body>
+</html>
