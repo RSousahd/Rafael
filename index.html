@@ -1112,7 +1112,7 @@ header .logo img {
 </div>
 
 
-  <!-- Bloco de Planilha de Orçamento -->
+<!-- Formulário de Orçamento -->
 <div id="orçamento-popup" class="orçamento-container">
   <div class="orçamento-box">
     <span class="close-btn" onclick="fecharOrcamento()">✖</span>
@@ -1133,13 +1133,13 @@ header .logo img {
       <select id="servico" required>
         <option value="">Selecione um serviço</option>
         <option value="Reformas">Reformas e Ampliações</option>
-        <option value="Pintura">Construção</option>
+        <option value="Construção">Construção</option>
         <option value="Eletrica">Instalação Elétrica</option>
         <option value="Diversos">Serviços Diversos</option>
-        <option value="Reformas">Pedreiro</option>
-        <option value="Pintura">Forros</option>
-        <option value="Eletrica">Varios serviços</option>
-        <option value="Diversos">Construção de piscina</option>
+        <option value="Pedreiro">Pedreiro</option>
+        <option value="Forros">Forros</option>
+        <option value="Varios">Vários serviços</option>
+        <option value="Piscina">Construção de piscina</option>
       </select>
 
       <label for="detalhes">Detalhes do Serviço:</label>
@@ -1149,6 +1149,50 @@ header .logo img {
     </form>
   </div>
 </div>
+
+<!-- Importar a biblioteca EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script>
+  // Inicializa o EmailJS com sua conta
+  (function() {
+      emailjs.init("SEU_USER_ID_AQUI"); // Substitua pelo seu USER ID do EmailJS
+  })();
+
+  // Capturar envio do formulário e enviar e-mail
+  document.getElementById("orcamento-form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Evita o recarregamento da página
+
+      // Captura os dados do formulário
+      var formData = {
+          nome: document.getElementById("nome").value,
+          email: document.getElementById("email").value,
+          telefone: document.getElementById("telefone").value,
+          servico: document.getElementById("servico").value,
+          detalhes: document.getElementById("detalhes").value,
+          destinatario: "sosresolverr@gmail.com" // Seu e-mail para receber as mensagens
+      };
+
+      // Enviar e-mail usando EmailJS
+      emailjs.send("SEU_SERVICE_ID", "SEU_TEMPLATE_ID", formData)
+      .then(function(response) {
+          alert("Solicitação enviada com sucesso! Entraremos em contato.");
+          fecharOrcamento();
+      }, function(error) {
+          alert("Ocorreu um erro ao enviar. Tente novamente mais tarde.");
+          console.log("Erro:", error);
+      });
+  });
+
+  // Função para fechar o bloco de orçamento
+  function fecharOrcamento() {
+      document.getElementById("orçamento-popup").style.opacity = "0";
+      setTimeout(() => {
+          document.getElementById("orçamento-popup").style.visibility = "hidden";
+      }, 500);
+  }
+</script>
+
 
 
 
