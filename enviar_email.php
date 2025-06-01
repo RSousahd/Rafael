@@ -1,40 +1,37 @@
 <?php
+// Configuração do destinatário
+$destinatario = "sosresolverr@gmail.com";
+
+// Verifica se os dados foram enviados via POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nome = htmlspecialchars($_POST["nome"]);
-    $email = htmlspecialchars($_POST["email"]);
-    $telefone = htmlspecialchars($_POST["telefone"]);
-    $servico = htmlspecialchars($_POST["servico"]);
-    $detalhes = htmlspecialchars($_POST["detalhes"]);
+    // Protege e valida os dados
+    $nome = htmlspecialchars(trim($_POST["nome"]));
+    $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+    $mensagem = htmlspecialchars(trim($_POST["mensagem"]));
 
-    $destinatario = "sosresolverr@gmail.com"; // 🔹 Seu e-mail
-    $assunto = "Novo Pedido de Orçamento";
-    
-    $mensagem = "
-        <html>
-        <head>
-            <title>Solicitação de Orçamento</title>
-        </head>
-        <body>
-            <h2>Detalhes do Pedido de Orçamento</h2>
-            <p><strong>Nome:</strong> $nome</p>
-            <p><strong>Email:</strong> $email</p>
-            <p><strong>Telefone:</strong> $telefone</p>
-            <p><strong>Tipo de Serviço:</strong> $servico</p>
-            <p><strong>Detalhes do Serviço:</strong> $detalhes</p>
-        </body>
-        </html>
-    ";
+    // Valida os campos obrigatórios
+    if (empty($nome) || empty($email) || empty($mensagem)) {
+        die("Por favor, preencha todos os campos obrigatórios.");
+    }
 
-    $headers = "MIME-Version: 1.0" . "\r\n";
-    $headers .= "Content-Type: text/html; charset=UTF-8" . "\r\n";
-    $headers .= "From: $email" . "\r\n"; // Remetente do formulário
+    // Monta o corpo do e-mail
+    $assunto = "Nova mensagem de parceria do site";
+    $corpo = "Nome: $nome\n";
+    $corpo .= "Email: $email\n\n";
+    $corpo .= "Mensagem:\n$mensagem";
 
-    if (mail($destinatario, $assunto, $mensagem, $headers)) {
-        echo "Orçamento enviado com sucesso!";
+    // Cabeçalhos para garantir envio correto
+    $headers = "From: $nome <$email>\r\n";
+    $headers .= "Reply-To: $email\r\n";
+    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+
+    // Envia o e-mail
+    if (mail($destinatario, $assunto, $corpo, $headers)) {
+        echo "Mensagem enviada com sucesso!";
     } else {
-        echo "Erro ao enviar o orçamento. Tente novamente.";
+        echo "Erro ao enviar a mensagem. Tente novamente.";
     }
 } else {
-    echo "Método inválido.";
+    echo "Acesso inválido.";
 }
 ?>
