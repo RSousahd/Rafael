@@ -1216,39 +1216,57 @@
  <!-- Seção Contato -->
 <section id="contact" class="section">
   <h2>Contato</h2>
-  <p>Entre em contato conosco para mais informações ou para solicitar um orçamento.</p>
+  <p>Fale conosco e solicite seu orçamento sem compromisso.</p>
+  
   <form id="formulario-contato">
     <div class="form-group">
-      <label for="nome">Nome:</label>
       <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
     </div>
 
     <div class="form-group">
-      <label for="telefone">Telefone:</label>
-      <input type="tel" id="telefone" name="telefone" required placeholder="(XX) XXXXX-XXXX" pattern="\\(?\\d{2}\\)?\\s?\\d{4,5}-?\\d{4}">
+      <input type="tel" id="telefone" name="telefone" required placeholder="(XX) XXXXX-XXXX" pattern="\(?\d{2}\)?\s?\d{4,5}-?\d{4}">
     </div>
 
     <div class="form-group">
-      <label for="email">E-mail:</label>
-      <input type="email" id="email" name="email" required placeholder="exemplo@dominio.com">
+      <input type="email" id="email" name="email" required placeholder="Seu e-mail">
     </div>
 
     <div class="form-group">
-      <label for="endereco">Endereço:</label>
-      <textarea id="endereco" name="endereco" rows="2" required placeholder="Rua, número, bairro, cidade"></textarea>
+      <textarea id="endereco" name="endereco" rows="2" required placeholder="Endereço completo"></textarea>
     </div>
 
     <div class="form-group">
-      <label for="tipo-servico">Tipo de serviço desejado:</label>
       <select id="tipo-servico" name="tipo-servico" required>
-        <option value="">Selecione...</option>
-        <option value="Manutenção elétrica">Manutenção elétrica</option>
-        <option value="Reparo hidráulico">Reparo hidráulico</option>
-        <option value="Troca de fechadura">Troca de fechadura</option>
-        <option value="Pintura">Pintura</option>
-        <option value="Outros">Outros</option>
+        <option value="">Selecione o serviço desejado</option>
+        <option>Manutenção elétrica</option>
+        <option>Reparo hidráulico</option>
+        <option>Troca de fechadura</option>
+        <option>Pintura</option>
+        <option>Outros</option>
       </select>
     </div>
+
+    <div class="form-group">
+      <label>Urgência:</label>
+      <label><input type="radio" name="urgencia" value="Urgente" required> Urgente</label>
+      <label><input type="radio" name="urgencia" value="Normal"> Normal</label>
+    </div>
+
+    <div class="form-group">
+      <label>Preferência de contato:</label>
+      <label><input type="checkbox" name="contato" value="Telefone" checked> Telefone</label>
+      <label><input type="checkbox" name="contato" value="E-mail"> E-mail</label>
+      <label><input type="checkbox" name="contato" value="WhatsApp"> WhatsApp</label>
+    </div>
+
+    <div class="form-group">
+      <textarea id="mensagem" name="mensagem" rows="4" placeholder="Mensagem ou detalhes adicionais..."></textarea>
+    </div>
+
+    <button type="submit" class="cta-btn">Enviar</button>
+  </form>
+</section>
+
 
     <div class="form-group">
       <label>Urgência:</label><br>
@@ -1303,34 +1321,6 @@
   }, 4500);
 </script>
 
-<script>
-  document.addEventListener("mouseleave", function (event) {
-    if (event.clientY < 10) {
-      document.getElementById("bloco-emergencia").style.display = "block";
-    }
-  });
-
-  function fecharBloco() {
-    document.getElementById("bloco-emergencia").style.display = "none";
-  }
-
-  function chamarEmergencia() {
-    let telefone = "5562991494589";
-    let mensagem = `🚨 *Pedido de Emergência!* 🚨\n\n` +
-                   `🛠️ *Serviços desejados:*\n` +
-                   `✅ Manutenção elétrica\n` +
-                   `✅ Reparo hidráulico\n` +
-                   `✅ Troca de fechadura\n` +
-                   `✅ Pintura urgente\n\n` +
-                   `📍 *Endereço:* (informe aqui)\n` +
-                   `📞 *Telefone:* (informe aqui)\n` +
-                   `💰 *Orçamento:* Aguardo valores\n`;
-
-    let url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
-    window.open(url, "_blank");
-    fecharBloco();
-  }
-</script>
 
 <script>
   document.getElementById("formulario-contato").addEventListener("submit", function (e) {
