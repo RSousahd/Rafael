@@ -1,339 +1,285 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pedreiro de Elite - Área Profissional</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Profissionais especializados em construção, pintura e reforma em Aparecida de Goiânia, Setor Garavelo, Bueno, Marista e Jardim América.">
-    <meta name="keywords" content="construção, pintura, reforma, pedreiro, pintor, mestre de obras, Aparecida de Goiânia, Setor Garavelo, Bueno, Marista, Jardim América">
-    <meta name="author" content="Nome da Sua Empresa">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph para redes sociais -->
-    <meta property="og:title" content="Construção, Pintura e Reforma em Aparecida de Goiânia e Região">
-    <meta property="og:description" content="Especialistas em construção e reforma para casas e comércios na região do Setor Garavelo, Bueno e Jardim América.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://pdepedreiro.com.br">
-    <meta property="og:image" content="https://pdepedreiro.com.br/img/Rafael SOS.png"> <!-- Substituir pela imagem do seu site -->
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Profissionais especializados em construção, pintura e reforma em Aparecida de Goiânia, Setor Garavelo, Bueno, Marista e Jardim América.">
+  <meta name="keywords"
+    content="construção, pintura, reforma, pedreiro, pintor, mestre de obras, Aparecida de Goiânia, Setor Garavelo, Bueno, Marista, Jardim América">
+  <meta name="author" content="Nome da Sua Empresa">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph para redes sociais -->
+  <meta property="og:title" content="Construção, Pintura e Reforma em Aparecida de Goiânia e Região">
+  <meta property="og:description"
+    content="Especialistas em construção e reforma para casas e comércios na região do Setor Garavelo, Bueno e Jardim América.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pdepedreiro.com.br">
+  <meta property="og:image" content="https://pdepedreiro.com.br/img/Rafael SOS.png">
+  <!-- Substituir pela imagem do seu site -->
+
   <!-- Favicon -->
-<link rel="icon" type="image/png" href="img/favicon/gd.png">
+  <link rel="icon" type="image/png" href="img/favicon/gd.png">
   <!-- Adicione isso no <head> do seu HTML se ainda não tiver -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <style>
     /* Estilo do Preloader */
-#preloader {
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  background-color: #111;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  color: #fff;
-  font-family: Arial, sans-serif;
-}
+    #preloader {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background-color: #111;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
 
-/* Ajuste da Logo no Preloader */
-#preloader img {
-  width: 180px;
-  animation: pulse 1.5s infinite alternate ease-in-out;
-}
+    /* Ajuste da Logo no Preloader */
+    #preloader img {
+      width: 180px;
+      animation: pulse 1.5s infinite alternate ease-in-out;
+    }
 
-/* Texto animado */
-.typing {
-  font-size: 1.5em;
-  margin-top: 10px;
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 2px solid #fff;
-  width: 0;
-  animation: typing 2s steps(12, end) forwards, blinkCursor 0.7s infinite;
-}
+    /* Texto animado */
+    .typing {
+      font-size: 1.5em;
+      margin-top: 10px;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid #fff;
+      width: 0;
+      animation: typing 2s steps(12, end) forwards, blinkCursor 0.7s infinite;
+    }
 
-@keyframes typing {
-  from { width: 0; }
-  to { width: 160px; }
-}
+    @keyframes typing {
+      from {
+        width: 0;
+      }
 
-@keyframes blinkCursor {
-  50% { border-color: transparent; }
-}
+      to {
+        width: 160px;
+      }
+    }
 
-/* Loader Circular */
-.loader {
-  width: 50px;
-  height: 50px;
-  border: 5px solid rgba(255, 255, 255, 0.3);
-  border-top-color: #f39c12;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin-top: 20px;
-}
+    @keyframes blinkCursor {
+      50% {
+        border-color: transparent;
+      }
+    }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
+    /* Loader Circular */
+    .loader {
+      width: 50px;
+      height: 50px;
+      border: 5px solid rgba(255, 255, 255, 0.3);
+      border-top-color: #f39c12;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-top: 20px;
+    }
 
-/* Animação da Logo */
-@keyframes pulse {
-  0% { transform: scale(1); opacity: 0.8; }
-  100% { transform: scale(1.1); opacity: 1; }
-}
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
 
-/* Transição ao entrar no site */
-#site-content {
-  display: none;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
+    /* Animação da Logo */
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.8;
+      }
 
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #f4f4f9;
-  color: #333;
-  line-height: 1.6;
-}
+      100% {
+        transform: scale(1.1);
+        opacity: 1;
+      }
+    }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+    /* Transição ao entrar no site */
+    #site-content {
+      display: none;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
 
-header {
-  background-color: rgba(0, 0, 0, 0.9);
-  padding: 15px 0;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease-in-out;
-}
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+    }
 
-header .container {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-}
-.header-hidden {
-  transform: translateY(-100%);
-}
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-/* Logo */
-header .logo img {
-  width: 150px;
-  transition: transform 0.5s ease-in-out;
-}
+    header {
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 15px 0;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease-in-out;
+    }
 
-/* Animação da Logo */
-@keyframes moveLogo {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(10px); }
-}
+    header .container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
 
-/* Menu Desktop */
-.menu {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
+    .header-hidden {
+      transform: translateY(-100%);
+    }
 
-.menu li {
-  display: inline;
-}
+    /* Logo */
+    header .logo img {
+      width: 150px;
+      transition: transform 0.5s ease-in-out;
+    }
 
-.menu a {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-  transition: 0.3s;
-  padding: 10px;
-}
+    /* Animação da Logo */
+    @keyframes moveLogo {
+      0% {
+        transform: translateX(0);
+      }
 
-.menu a:hover {
-  color: #f39c12;
-  text-shadow: 0 0 10px rgba(243, 156, 18, 0.8);
-}
+      100% {
+        transform: translateX(10px);
+      }
+    }
 
-/* Menu Responsivo */
-.menu-icon {
-  font-size: 30px;
-  cursor: pointer;
-  display: none;
-  color: white;
-}
+    /* Menu Desktop */
+    .menu {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
 
-/* Esconder o checkbox */
-#menu-toggle {
-  display: none;
-}
+    .menu li {
+      display: inline;
+    }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  .menu {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background: #333;
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
-  }
+    .menu a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      transition: 0.3s;
+      padding: 10px;
+    }
 
-  .menu li {
-    margin: 10px 0;
-  }
+    .menu a:hover {
+      color: #f39c12;
+      text-shadow: 0 0 10px rgba(243, 156, 18, 0.8);
+    }
 
-  #menu-toggle:checked + .menu-icon + nav .menu {
-    display: flex;
-  }
+    /* Menu Responsivo */
+    .menu-icon {
+      font-size: 30px;
+      cursor: pointer;
+      display: none;
+      color: white;
+    }
 
-  .menu-icon {
-    display: block;
-  }
-}
+    /* Esconder o checkbox */
+    #menu-toggle {
+      display: none;
+    }
 
-/* --- Seção Parceria --- */
-#parceria {
-  padding: 80px 20px;
-  background: #222;
-  text-align: center;
-  color: rgb(51, 1, 253);
-}
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #333;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+      }
 
-#parceria h2 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
+      .menu li {
+        margin: 10px 0;
+      }
 
-#parceria p {
-  font-size: 1.2em;
-  max-width: 800px;
-  margin: auto;
-  line-height: 1.6;
-}
+      #menu-toggle:checked+.menu-icon+nav .menu {
+        display: flex;
+      }
 
-#parceria .parceiros {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 30px;
-}
+      .menu-icon {
+        display: block;
+      }
+    }
 
-.parceiro {
-  width: 150px;
-  height: 150px;
-  background: white;
-  margin: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  transition: transform 0.3s;
-}
+    /* --- Seção Parceria --- */
+    #parceria {
+      padding: 80px 20px;
+      background: #222;
+      text-align: center;
+      color: rgb(51, 1, 253);
+    }
 
-.parceiro:hover {
-  transform: scale(1.1);
-}
+    #parceria h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
 
-/* --- Hero / Apresentação --- */
-.hero {
-  position: relative;
-  height: 500px;
-  background: url('img/hero.jpg') no-repeat center center/cover;
-}
+    #parceria p {
+      font-size: 1.2em;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+    }
 
-.hero .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 20px;
-}
+    #parceria .parceiros {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 30px;
+    }
 
-.hero .overlay h1 {
-  color: #fff;
-  font-size: 3em;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
+    .parceiro {
+      width: 150px;
+      height: 150px;
+      background: white;
+      margin: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
 
-.hero .overlay p {
-  color: #ddd;
-  font-size: 1.5em;
-}
+    .parceiro:hover {
+      transform: scale(1.1);
+    }
 
-/* --- Botão WhatsApp --- */
-.whatsapp-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: linear-gradient(45deg, #25d366, #128C7E);
-  color: white;
-  padding: 15px;
-  border-radius: 50%;
-  font-size: 24px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-
-.whatsapp-button:hover {
-  transform: scale(1.1);
-}
-
-/* Mostrar botão do WhatsApp ao rolar */
-.show-whatsapp {
-  display: block !important;
-}
-
-    
-    /* Hero / Apresentação com Background Impactante */
+    /* --- Hero / Apresentação --- */
     .hero {
       position: relative;
       height: 500px;
-      background: url('img/hero.jpg') no-repeat center center/cover; /* Substitua pelo caminho da sua imagem impactante */
+      background: url('img/hero.jpg') no-repeat center center/cover;
     }
-    
-/* Adiciona e posiciona o boneco */
-.boneco {
-  position: absolute;
-  bottom: 0; /* Mantém no chão da seção */
-  left: 10%; /* Posição inicial */
-  width: 150px; /* Tamanho ajustável */
-  height: auto;
-  animation: moveBoneco 3s infinite ease-in-out alternate; /* Animação */
-}
-/* Animação do boneco se movendo */
-@keyframes moveBoneco {
-  0% {
-    transform: translateX(0) scale(1);
-  }
-  100% {
-    transform: translateX(20px) scale(1.1); /* Move um pouco e aumenta ligeiramente */
-  }
-}
+
     .hero .overlay {
       position: absolute;
       top: 0;
@@ -348,6 +294,7 @@ header .logo img {
       text-align: center;
       padding: 0 20px;
     }
+
     .hero .overlay h1 {
       color: #fff;
       font-size: 3em;
@@ -355,49 +302,142 @@ header .logo img {
       text-transform: uppercase;
       letter-spacing: 2px;
     }
+
     .hero .overlay p {
       color: #ddd;
       font-size: 1.5em;
     }
-    
+
+    /* --- Botão WhatsApp --- */
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(45deg, #25d366, #128C7E);
+      color: white;
+      padding: 15px;
+      border-radius: 50%;
+      font-size: 24px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .whatsapp-button:hover {
+      transform: scale(1.1);
+    }
+
+    /* Mostrar botão do WhatsApp ao rolar */
+    .show-whatsapp {
+      display: block !important;
+    }
+
+
+    /* Hero / Apresentação com Background Impactante */
+    .hero {
+      position: relative;
+      height: 500px;
+      background: url('img/hero.jpg') no-repeat center center/cover;
+      /* Substitua pelo caminho da sua imagem impactante */
+    }
+
+    /* Adiciona e posiciona o boneco */
+    .boneco {
+      position: absolute;
+      bottom: 0;
+      /* Mantém no chão da seção */
+      left: 10%;
+      /* Posição inicial */
+      width: 150px;
+      /* Tamanho ajustável */
+      height: auto;
+      animation: moveBoneco 3s infinite ease-in-out alternate;
+      /* Animação */
+    }
+
+    /* Animação do boneco se movendo */
+    @keyframes moveBoneco {
+      0% {
+        transform: translateX(0) scale(1);
+      }
+
+      100% {
+        transform: translateX(20px) scale(1.1);
+        /* Move um pouco e aumenta ligeiramente */
+      }
+    }
+
+    .hero .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero .overlay h1 {
+      color: #fff;
+      font-size: 3em;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .hero .overlay p {
+      color: #ddd;
+      font-size: 1.5em;
+    }
+
     /* Configuração geral do container */
-  .slider-container {
-    overflow: hidden;
-    white-space: nowrap;
-    width: 100%;
-    background: #333;
-    padding: 10px 0;
-  }
-
-  /* Slider animado */
-  .slider {
-    display: flex;
-    gap: 30px; /* Espaço entre os itens */
-    animation: scroll 25s linear infinite;
-    width: max-content;
-  }
-
-  /* Estilização dos slides */
-  .slide {
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    padding: 10px 20px;
-    background: #007bff;
-    border-radius: 5px;
-    white-space: nowrap;
-  }
-
-  /* Animação contínua */
-  @keyframes scroll {
-    from {
-      transform: translateX(0);
+    .slider-container {
+      overflow: hidden;
+      white-space: nowrap;
+      width: 100%;
+      background: #333;
+      padding: 10px 0;
     }
-    to {
-      transform: translateX(-50%);
+
+    /* Slider animado */
+    .slider {
+      display: flex;
+      gap: 30px;
+      /* Espaço entre os itens */
+      animation: scroll 25s linear infinite;
+      width: max-content;
     }
-  }
-    
+
+    /* Estilização dos slides */
+    .slide {
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+      padding: 10px 20px;
+      background: #007bff;
+      border-radius: 5px;
+      white-space: nowrap;
+    }
+
+    /* Animação contínua */
+    @keyframes scroll {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
     /* Banner de Chamada à Ação */
     .banner {
       background: linear-gradient(90deg, #ff6600, #ffcc00);
@@ -405,14 +445,17 @@ header .logo img {
       text-align: center;
       color: #222;
     }
+
     .banner h2 {
       font-size: 2.5em;
       margin-bottom: 10px;
     }
+
     .banner p {
       font-size: 1.2em;
       margin-bottom: 20px;
     }
+
     .banner .cta-btn {
       background: #222;
       color: #fff;
@@ -421,10 +464,11 @@ header .logo img {
       border-radius: 5px;
       transition: background 0.3s;
     }
+
     .banner .cta-btn:hover {
       background: #444;
     }
-    
+
     /* Bloco Dinâmico Criativo */
     .dynamic-block {
       background: linear-gradient(45deg, #ff6600, #ffcc00);
@@ -437,25 +481,34 @@ header .logo img {
       font-size: 1.5em;
       animation: pulse 2s infinite alternate;
     }
+
     @keyframes pulse {
-      0% { transform: scale(1); }
-      100% { transform: scale(1.05); }
+      0% {
+        transform: scale(1);
+      }
+
+      100% {
+        transform: scale(1.05);
+      }
     }
+
     .dynamic-block strong {
       color: #0044cc;
       text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     }
-    
+
     /* Seções Gerais */
     .section {
       padding: 60px 20px;
     }
+
     .section h2 {
       font-size: 2.5em;
       margin-bottom: 20px;
       text-align: center;
       color: #222;
     }
+
     .section p {
       font-size: 1.1em;
       margin-bottom: 20px;
@@ -464,12 +517,17 @@ header .logo img {
       margin-right: auto;
       text-align: center;
     }
-    
+
     /* Seção Sobre */
-    #about { background: #fff; }
-    
+    #about {
+      background: #fff;
+    }
+
     /* Seção Serviços */
-    #services { background: #f9f9f9; }
+    #services {
+      background: #f9f9f9;
+    }
+
     #services .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -477,59 +535,65 @@ header .logo img {
       max-width: 1200px;
       margin: auto;
     }
+
     #services .service {
       background: #fff;
       padding: 20px;
       border-radius: 10px;
       text-align: center;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s;
     }
+
     #services .service:hover {
       transform: scale(1.05);
     }
+
     #services .service h3 {
       margin-bottom: 10px;
       color: #ff6600;
     }
-    
+
     /* Estilizando a grade do portfólio */
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-    padding: 20px;
-    justify-content: center;
-}
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      padding: 20px;
+      justify-content: center;
+    }
 
-/* Estilizando os itens do portfólio */
-.portfolio-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
-}
+    /* Estilizando os itens do portfólio */
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      transition: transform 0.3s ease-in-out;
+    }
 
-.portfolio-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
-}
+    .portfolio-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      transition: transform 0.3s ease-in-out;
+    }
 
-/* Efeito ao passar o mouse */
-.portfolio-item:hover {
-    transform: scale(1.05);
-}
+    /* Efeito ao passar o mouse */
+    .portfolio-item:hover {
+      transform: scale(1.05);
+    }
 
-.portfolio-item:hover img {
-    transform: scale(1.1);
-}
+    .portfolio-item:hover img {
+      transform: scale(1.1);
+    }
 
-    
+
     /* Seção Depoimentos */
-    #testimonials { background: #f9f9f9; }
+    #testimonials {
+      background: #f9f9f9;
+    }
+
     #testimonials .testimonial {
       max-width: 800px;
       margin: auto;
@@ -538,70 +602,73 @@ header .logo img {
     }
 
     /* Estilizando a seção */
-#nossos-servicos {
-  text-align: center;
-  padding: 60px 20px;
-  background-color: #f8f9fa;
-}
+    #nossos-servicos {
+      text-align: center;
+      padding: 60px 20px;
+      background-color: #f8f9fa;
+    }
 
-/* Título e subtítulo */
-.section-title {
-  font-size: 2.5em;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 10px;
-}
+    /* Título e subtítulo */
+    .section-title {
+      font-size: 2.5em;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+    }
 
-.section-subtitle {
-  font-size: 1.2em;
-  color: #666;
-  margin-bottom: 40px;
-}
+    .section-subtitle {
+      font-size: 1.2em;
+      color: #666;
+      margin-bottom: 40px;
+    }
 
-/* Grade de serviços */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+    /* Grade de serviços */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-/* Blocos de serviço */
-.service {
-  background: #fff;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
-}
+    /* Blocos de serviço */
+    .service {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
 
-.service:hover {
-  transform: translateY(-5px);
-}
+    .service:hover {
+      transform: translateY(-5px);
+    }
 
-/* Ícones de serviço */
-.service-icon {
-  font-size: 2.5em;
-  margin-bottom: 15px;
-  color: #f39c12;
-}
+    /* Ícones de serviço */
+    .service-icon {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+      color: #f39c12;
+    }
 
-/* Listagem de serviços */
-.service ul {
-  list-style: none;
-  padding: 0;
-}
+    /* Listagem de serviços */
+    .service ul {
+      list-style: none;
+      padding: 0;
+    }
 
-.service ul li {
-  font-size: 1em;
-  color: #444;
-  padding: 5px 0;
-}
+    .service ul li {
+      font-size: 1em;
+      color: #444;
+      padding: 5px 0;
+    }
 
-    
+
     /* Seção Contato */
-    #contact { background: #fff; }
+    #contact {
+      background: #fff;
+    }
+
     #contact form {
       max-width: 600px;
       margin: auto;
@@ -609,11 +676,14 @@ header .logo img {
       flex-direction: column;
       gap: 15px;
     }
-    #contact input, #contact textarea {
+
+    #contact input,
+    #contact textarea {
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 5px;
     }
+
     #contact button {
       padding: 15px;
       background: #ff6600;
@@ -624,114 +694,189 @@ header .logo img {
       cursor: pointer;
       transition: background 0.3s;
     }
+
     #contact button:hover {
       background: #ffcc00;
     }
-    
+
     /* Estilizando o bloco de orçamento */
-.orçamento-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.5s, visibility 0.5s;
-}
+    .orçamento-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.5s, visibility 0.5s;
+    }
 
-/* Caixa do orçamento */
-.orçamento-box {
-  background: white;
-  padding: 20px;
-  width: 350px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  position: relative;
-}
+    /* Caixa do orçamento */
+    .orçamento-box {
+      background: white;
+      padding: 20px;
+      width: 350px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      position: relative;
+    }
 
-/* Botão de fechar */
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 1.5em;
-  cursor: pointer;
-  color: #333;
-}
+    /* Botão de fechar */
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.5em;
+      cursor: pointer;
+      color: #333;
+    }
 
-/* Formulário */
-.orçamento-box input,
-.orçamento-box select,
-.orçamento-box textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 5px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1em;
-}
+    /* Estilização geral do formulário */
+    .formulario-container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
 
-.orçamento-box button {
-  background: #f39c12;
-  color: white;
-  font-size: 2.1em;
-  border: none;
-  padding: 10px;
-  width: 100%;
-  margin-top: 10px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background 0.3s;
-}
+    /* Título do formulário */
+    .formulario-container h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #222;
+    }
 
-.orçamento-box button:hover {
-  background: #e67e22;
-}
-#parceria {
-    background-color: #f8f8f8;
-    padding: 50px 20px;
-    text-align: center;
-}
+    /* Inputs do formulário */
+    .formulario-container input,
+    .formulario-container select,
+    .formulario-container textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: 0.3s;
+    }
 
-.parceria-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 20px;
-    flex-wrap: wrap;
-}
+    /* Efeito ao focar no input */
+    .formulario-container input:focus,
+    .formulario-container select:focus,
+    .formulario-container textarea:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
 
-.parceria-item {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-}
+    /* Botão de envio */
+    .formulario-container button {
+      width: 100%;
+      padding: 12px;
+      background: #007bff;
+      color: #fff;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-.parceria-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background: #25D366;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: 0.3s;
-}
+    /* Efeito hover no botão */
+    .formulario-container button:hover {
+      background: #0056b3;
+    }
 
-.parceria-btn:hover {
-    background: #1da851;
-}
+    /* Mensagem de erro */
+    .mensagem-erro {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
 
-    /* Área de Vídeo com Efeito de Fundo Integrado */ 
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .formulario-container {
+        width: 90%;
+        padding: 15px;
+      }
+    }
+
+
+    /* Formulário */
+    .orçamento-box input,
+    .orçamento-box select,
+    .orçamento-box textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+
+    .orçamento-box button {
+      background: #f39c12;
+      color: white;
+      font-size: 2.1em;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      margin-top: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .orçamento-box button:hover {
+      background: #e67e22;
+    }
+
+    #parceria {
+      background-color: #f8f8f8;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .parceria-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .parceria-item {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+    }
+
+    .parceria-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #25D366;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .parceria-btn:hover {
+      background: #1da851;
+    }
+
+    /* Área de Vídeo com Efeito de Fundo Integrado */
     .video-container {
       margin-top: 50px;
       display: flex;
@@ -739,13 +884,15 @@ header .logo img {
       align-items: center;
       position: relative;
     }
+
     .video-container video {
       width: 80%;
       max-width: 800px;
-      mix-blend-mode: multiply; /* Integra o vídeo com o fundo da página */
+      mix-blend-mode: multiply;
+      /* Integra o vídeo com o fundo da página */
       background: none;
       border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     }
 
     /* Rodapé */
@@ -755,6 +902,7 @@ header .logo img {
       padding: 20px;
       text-align: center;
     }
+
     footer .footer-content {
       display: flex;
       justify-content: space-around;
@@ -762,73 +910,77 @@ header .logo img {
       max-width: 1200px;
       margin: auto;
     }
+
     footer .footer-section {
       flex: 1;
       margin: 10px;
     }
+
     footer .footer-section h3 {
       margin-bottom: 10px;
     }
+
     footer .footer-section p {
       font-size: 0.9em;
       color: #ddd;
     }
+
     /* Estilos do Bloco de Emergência */
-.bloco-emergencia {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    background: white;
-    padding: 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    text-align: center;
-    z-index: 1000;
-}
+    .bloco-emergencia {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      background: white;
+      padding: 20px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      text-align: center;
+      z-index: 1000;
+    }
 
-.bloco-emergencia .bloco-conteudo h2 {
-    margin-bottom: 10px;
-    font-size: 20px;
-    color: #333;
-}
+    .bloco-emergencia .bloco-conteudo h2 {
+      margin-bottom: 10px;
+      font-size: 20px;
+      color: #333;
+    }
 
-.bloco-emergencia p {
-    font-size: 16px;
-    color: #666;
-}
+    .bloco-emergencia p {
+      font-size: 16px;
+      color: #666;
+    }
 
-.bloco-emergencia button {
-    margin: 10px 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background: #ff5733;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
+    .bloco-emergencia button {
+      margin: 10px 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #ff5733;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
 
-.bloco-emergencia button:hover {
-    background: #e04e2a;
-}
-
+    .bloco-emergencia button:hover {
+      background: #e04e2a;
+    }
   </style>
 </head>
+
 <body>
- <!-- Preloader (antes do conteúdo principal) -->
- <div id="preloader">
-  <img src="Img/Rafael SOS.png" alt="Carregando..."> <!-- Substitua pelo caminho correto da sua logo -->
-  <div class="typing">Carregando...</div> <!-- Texto animado -->
-  <div class="loader"></div> <!-- Loader circular -->
-</div>
- <!-- Cabeçalho Responsivo -->
-<header>
-  <div class="container">
+  <!-- Preloader (antes do conteúdo principal) -->
+  <div id="preloader">
+    <img src="Img/Rafael SOS.png" alt="Carregando..."> <!-- Substitua pelo caminho correto da sua logo -->
+    <div class="typing">Carregando...</div> <!-- Texto animado -->
+    <div class="loader"></div> <!-- Loader circular -->
+  </div>
+  <!-- Cabeçalho Responsivo -->
+  <header>
+    <div class="container">
       <div class="logo">
-          <img src="img/Rafael SOS.png" alt="Logo Rafael SOS"> <!-- Substitua pelo caminho correto da logo -->
+        <img src="img/Rafael SOS.png" alt="Logo Rafael SOS"> <!-- Substitua pelo caminho correto da logo -->
       </div>
 
       <!-- Checkbox para ativar o menu móvel -->
@@ -837,41 +989,41 @@ header .logo img {
 
       <!-- Menu de Navegação -->
       <nav>
-          <ul class="menu">
-              <li><a href="#home">Início</a></li>
-              <li><a href="#about">Sobre</a></li>
-              <li><a href="#services">Serviços</a></li>
-              <li><a href="#portfolio">Portfólio</a></li>
-              <li><a href="#contact">Contato</a></li>
-              <li><a href="#parceria">Parceria</a></li> <!-- Novo item do menu -->
-          </ul>
+        <ul class="menu">
+          <li><a href="#home">Início</a></li>
+          <li><a href="#about">Sobre</a></li>
+          <li><a href="#services">Serviços</a></li>
+          <li><a href="#portfolio">Portfólio</a></li>
+          <li><a href="#contact">Contato</a></li>
+          <li><a href="#parceria">Parceria</a></li> <!-- Novo item do menu -->
+        </ul>
       </nav>
-  </div>
-</header>
+    </div>
+  </header>
 
 
   <!-- Seção Hero -->
-<section class="hero">
-  <div class="overlay">
-    <h1>Você Preciso de um profissional com multiplas habilidade? </h1>
-    <p><strong>RAFAEL SOS</strong> é sua escolha <strong> CERTA!</strong></p>
-  </div>
-  <img src="Img/bonego.png" alt="Boneco animado" class="boneco">
-</section>
+  <section class="hero">
+    <div class="overlay">
+      <h1>Você Preciso de um profissional com multiplas habilidade? </h1>
+      <p><strong>RAFAEL SOS</strong> é sua escolha <strong> CERTA!</strong></p>
+    </div>
+    <img src="Img/bonego.png" alt="Boneco animado" class="boneco">
+  </section>
 
 
   <!-- Slider de Mensagens -->
-<section class="slider-container">
-  <div class="slider">
-    <div class="slide">Tradição e Qualidade em Cada Detalhe</div>
-    <div class="slide">Seu serviço é pequeno? é com RAFAEL SOS</div>
-    <div class="slide">Precisa de um profissional? é com RAFAEL SOS</div>
-    <!-- Duplicação para efeito infinito -->
-    <div class="slide">Tradição e Qualidade em Cada Detalhe</div>
-    <div class="slide">Seu serviço é pequeno? é com RAFAEL SOS</div>
-    <div class="slide">Precisa de um profissional? é com RAFAEL SOS</div>
-  </div>
-</section>
+  <section class="slider-container">
+    <div class="slider">
+      <div class="slide">Tradição e Qualidade em Cada Detalhe</div>
+      <div class="slide">Seu serviço é pequeno? é com RAFAEL SOS</div>
+      <div class="slide">Precisa de um profissional? é com RAFAEL SOS</div>
+      <!-- Duplicação para efeito infinito -->
+      <div class="slide">Tradição e Qualidade em Cada Detalhe</div>
+      <div class="slide">Seu serviço é pequeno? é com RAFAEL SOS</div>
+      <div class="slide">Precisa de um profissional? é com RAFAEL SOS</div>
+    </div>
+  </section>
 
   <!-- Banner de Chamada à Ação -->
   <section class="banner">
@@ -889,7 +1041,8 @@ header .logo img {
   <!-- Seção Sobre -->
   <section id="about" class="section">
     <h2>Quem Somos</h2>
-    <p>Sou especialistas em construção e reformas de alta qualidade, com anos de experiência e comprometido com os melhores resultados.</p>
+    <p>Sou especialistas em construção e reformas de alta qualidade, com anos de experiência e comprometido com os
+      melhores resultados.</p>
   </section>
 
   <!-- Seção Serviços -->
@@ -898,7 +1051,8 @@ header .logo img {
     <div class="services-grid">
       <div class="service">
         <h3>Construção de Obras</h3>
-        <p>Realizamos projetos de construção de alta qualidade, desde pequenas reformas, Seviços diversos no ramo da construção civil.</p>
+        <p>Realizamos projetos de construção de alta qualidade, desde pequenas reformas, Seviços diversos no ramo da
+          construção civil.</p>
       </div>
       <div class="service">
         <h3>Reformas Residenciais</h3>
@@ -910,88 +1064,91 @@ header .logo img {
       </div>
       <div class="service">
         <h3>Serviços de Pintura</h3>
-        <p>Realizamos Pintura e pente fino. Vamos fazer Uma repaginada no Seu imovel?. <strong>TEMOS DISCONTOS PARA EMPRESAS..</strong>.</p>
+        <p>Realizamos Pintura e pente fino. Vamos fazer Uma repaginada no Seu imovel?. <strong>TEMOS DISCONTOS PARA
+            EMPRESAS..</strong>.</p>
       </div>
     </div>
   </section>
 
   <!-- Seção Portfólio -->
-<section id="portfolio" class="section">
-  <h2>Nosso Portfólio</h2>
-  <div class="portfolio-grid">
+  <section id="portfolio" class="section">
+    <h2>Nosso Portfólio</h2>
+    <div class="portfolio-grid">
       <div class="portfolio-item">
-          <img src="img/Design sem nome/1.png" alt="Projeto 1">
+        <img src="img/Design sem nome/1.png" alt="Projeto 1">
       </div>
       <div class="portfolio-item">
-          <img src="img/Design sem nome/2.png" alt="Projeto 2">
+        <img src="img/Design sem nome/2.png" alt="Projeto 2">
       </div>
       <div class="portfolio-item">
-          <img src="img/Design sem nome/3.png" alt="Projeto 3">
+        <img src="img/Design sem nome/3.png" alt="Projeto 3">
       </div>
       <div class="portfolio-item">
-          <img src="img/Design sem nome/4.png" alt="Projeto 4">
+        <img src="img/Design sem nome/4.png" alt="Projeto 4">
       </div>
       <div class="portfolio-item">
-          <img src="img/Design sem nome/5.png" alt="Projeto 5">
+        <img src="img/Design sem nome/5.png" alt="Projeto 5">
       </div>
       <div class="portfolio-item">
-          <img src="img/Design sem nome/6.png" alt="Projeto 6">
+        <img src="img/Design sem nome/6.png" alt="Projeto 6">
       </div>
       <div class="portfolio-item">
-          <img src="img/Design sem nome/7.png" alt="Projeto 7">
+        <img src="img/Design sem nome/7.png" alt="Projeto 7">
       </div>
       <div class="portfolio-item">
-          <img src="img/Design sem nome/8.png" alt="Projeto 8">
+        <img src="img/Design sem nome/8.png" alt="Projeto 8">
       </div>
       <div class="portfolio-item">
         <img src="img/Design sem nome/d.png" alt="Projeto 6">
-    </div>
-    <div class="portfolio-item">
+      </div>
+      <div class="portfolio-item">
         <img src="img/Design sem nome/s.png" alt="Projeto 7">
-    </div>
-    <div class="portfolio-item">
+      </div>
+      <div class="portfolio-item">
         <img src="img/Design sem nome/f.png" alt="Projeto 8">
+      </div>
+      <div class="portfolio-item">
+        <img src="img/Design sem nome/1.jpg" alt="Projeto 8">
+      </div>
+      <div class="portfolio-item">
+        <img src="img/Design sem nome/2.jpg" alt="Projeto 6">
+      </div>
+      <div class="portfolio-item">
+        <img src="img/Design sem nome/k.png" alt="Projeto 7">
+      </div>
+      <div class="portfolio-item">
+        <img src="img/Design sem nome/4.jpg" alt="Projeto 8">
+      </div>
     </div>
-    <div class="portfolio-item">
-      <img src="img/Design sem nome/1.jpg" alt="Projeto 8">
-  </div>
-  <div class="portfolio-item">
-    <img src="img/Design sem nome/2.jpg" alt="Projeto 6">
-</div>
-<div class="portfolio-item">
-    <img src="img/Design sem nome/k.png" alt="Projeto 7">
-</div>
-<div class="portfolio-item">
-    <img src="img/Design sem nome/4.jpg" alt="Projeto 8">
-</div>
-  </div>
-</section>
+  </section>
 
-<!-- Seção Parceria -->
-<section id="parceria" class="section">
-  <h2>Seja Nosso Parceiro</h2>
-  <p>Junte-se a nós e expanda suas oportunidades de negócios. Oferecemos parcerias estratégicas para profissionais e empresas.</p>
-  
-  <div class="parceria-container">
+  <!-- Seção Parceria -->
+  <section id="parceria" class="section">
+    <h2>Seja Nosso Parceiro</h2>
+    <p>Junte-se a nós e expanda suas oportunidades de negócios. Oferecemos parcerias estratégicas para profissionais e
+      empresas.</p>
+
+    <div class="parceria-container">
       <div class="parceria-item">
-          <h3>Profissionais</h3>
-          <p>Se você é um especialista na área e quer oferecer seus serviços, entre em contato.</p>
+        <h3>Profissionais</h3>
+        <p>Se você é um especialista na área e quer oferecer seus serviços, entre em contato.</p>
       </div>
 
       <div class="parceria-item">
-          <h3>Empresas</h3>
-          <p>Grandes e pequenas empresas podem se unir ao nosso projeto para crescerem juntas.</p>
+        <h3>Empresas</h3>
+        <p>Grandes e pequenas empresas podem se unir ao nosso projeto para crescerem juntas.</p>
       </div>
-  </div>
+    </div>
 
-  <a href="#contact" class="parceria-btn">Quero ser parceiro</a>
-</section>
+    <a href="#contact" class="parceria-btn">Quero ser parceiro</a>
+  </section>
 
   <!-- Seção Depoimentos -->
   <section id="testimonials" class="section">
     <h2>O que nossos clientes dizem</h2>
     <div class="testimonial">
-      <p>"O serviço foi impecável e superou nossas expectativas. A equipe foi extremamente profissional em todas as fases do projeto."</p>
+      <p>"O serviço foi impecável e superou nossas expectativas. A equipe foi extremamente profissional em todas as
+        fases do projeto."</p>
       <p>- João Silva</p>
     </div>
   </section>
@@ -999,7 +1156,7 @@ header .logo img {
   <section id="nossos-servicos" class="section">
     <h2 class="section-title">Nossos Serviços</h2>
     <p class="section-subtitle">Excelência em cada detalhe, do planejamento à execução.</p>
-    
+
     <div class="services-grid">
       <!-- Serviço 1: Reformas -->
       <div class="service">
@@ -1013,7 +1170,7 @@ header .logo img {
           <li>Construção e manutenção de muros e calçadas</li>
         </ul>
       </div>
-  
+
       <!-- Serviço 2: Pintura -->
       <div class="service">
         <div class="service-icon">🎨</div>
@@ -1026,7 +1183,7 @@ header .logo img {
           <li>Revitalização de fachadas</li>
         </ul>
       </div>
-  
+
       <!-- Serviço 3: Elétrica -->
       <div class="service">
         <div class="service-icon">⚡</div>
@@ -1039,7 +1196,7 @@ header .logo img {
           <li>Trabalho exclusivo com instalações monofásicas</li>
         </ul>
       </div>
-  
+
       <!-- Serviço 4: Diversos -->
       <div class="service">
         <div class="service-icon">🔧</div>
@@ -1054,31 +1211,29 @@ header .logo img {
       </div>
     </div>
   </section>
-  
 
- <!-- Seção Contato -->
+
+  <!-- Seção Contato -->
 <section id="contact" class="section">
-  <h2>Entre em Contato</h2>
-  <form>
-      <input type="text" placeholder="Seu Nome" required>
-      <input type="email" placeholder="Seu E-mail" required>
-      <input type="tel" placeholder="Seu Telefone" required> <!-- Adicionado campo de telefone -->
-      <textarea placeholder="Sua Mensagem" required></textarea>
-      <button type="submit">Enviar</button>
+  <h2>Contato</h2>
+  <p>Entre em contato conosco para mais informações ou para solicitar um orçamento.</p>
+  <form id="formulario-contato">
+    <div class="form-group">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
+    </div>
+    <div class="form-group">
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" name="mensagem" required></textarea>
+    </div>
+    <button type="submit" class="cta-btn">Enviar</button>
   </form>
 </section>
 
-
-  <!-- Área de Vídeo com Botão de Play -->
-  <!--
-<div class="video-container">
-  <video id="meuVideo" width="80%" controls>
-    <source src="seu-video.mp4" type="video/mp4">
-    Seu navegador não suporta a reprodução de vídeos.
-  </video>
-  <div class="play-button" id="playButton">&#9658;</div>
-</div>
--->
   <!-- Rodapé -->
   <footer>
     <div class="footer-content">
@@ -1100,201 +1255,29 @@ header .logo img {
       </div>
     </div>
   </footer>
-  
-
-  <!-- Bloco Emergência 24H -->
-  <!--
-<div id="bloco-emergencia" class="bloco-emergencia">
-  <div class="bloco-conteudo">
-      <h2>Precisa de um Profissional Urgente?</h2>
-      <p>Oferecemos atendimento emergencial em até 24 horas.</p>
-      <button onclick="chamarEmergencia()">Solicitar Agora</button>
-      <button onclick="fecharBloco()">Fechar</button>
-  </div>
-</div>
--->
-
-<!-- Formulário de Orçamento -->
-  <!--
-<div id="orçamento-popup" class="orçamento-container">
-  <div class="orçamento-box">
-    <span class="close-btn" onclick="fecharOrcamento()">✖</span>
-    <h2>Solicite seu Orçamento</h2>
-    <p>Preencha os detalhes abaixo e entraremos em contato.</p>
-
-    <form id="orcamento-form">
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" placeholder="Seu nome" required>
-
-      <label for="email">E-mail:</label>
-      <input type="email" id="email" placeholder="Seu e-mail" required>
-
-      <label for="telefone">Telefone:</label>
-      <input type="tel" id="telefone" placeholder="Seu telefone" required>
-
-      <label for="servico">Tipo de Serviço:</label>
-      <select id="servico" required>
-        <option value="">Selecione um serviço</option>
-        <option value="Reformas">Reformas e Ampliações</option>
-        <option value="Construção">Construção</option>
-        <option value="Eletrica">Instalação Elétrica</option>
-        <option value="Diversos">Serviços Diversos</option>
-        <option value="Pedreiro">Pedreiro</option>
-        <option value="Forros">Forros</option>
-        <option value="Varios">Vários serviços</option>
-        <option value="Piscina">Construção de piscina</option>
-      </select>
-
-      <label for="detalhes">Detalhes do Serviço:</label>
-      <textarea id="detalhes" placeholder="Descreva o serviço desejado..." required></textarea>
-
-      <button type="submit">Solicitar Orçamento</button>
-    </form>
-  </div>
-</div>
-
-<!-- Importar a biblioteca EmailJS -->
-  <!--
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-<script>
-  // Inicializa o EmailJS com sua conta
-  (function() {
-      emailjs.init("SEU_USER_ID_AQUI"); // Substitua pelo seu USER ID do EmailJS
-  })();
-
-  // Capturar envio do formulário e enviar e-mail
-  document.getElementById("orcamento-form").addEventListener("submit", function(event) {
-      event.preventDefault(); // Evita o recarregamento da página
-
-      // Captura os dados do formulário
-      var formData = {
-          nome: document.getElementById("nome").value,
-          email: document.getElementById("email").value,
-          telefone: document.getElementById("telefone").value,
-          servico: document.getElementById("servico").value,
-          detalhes: document.getElementById("detalhes").value,
-          destinatario: "sosresolverr@gmail.com" // Seu e-mail para receber as mensagens
-      };
-
-      // Enviar e-mail usando EmailJS
-      emailjs.send("SEU_SERVICE_ID", "SEU_TEMPLATE_ID", formData)
-      .then(function(response) {
-          alert("Solicitação enviada com sucesso! Entraremos em contato.");
-          fecharOrcamento();
-      }, function(error) {
-          alert("Ocorreu um erro ao enviar. Tente novamente mais tarde.");
-          console.log("Erro:", error);
-      });
-  });
-
-  // Função para fechar o bloco de orçamento
-  function fecharOrcamento() {
-      document.getElementById("orçamento-popup").style.opacity = "0";
-      setTimeout(() => {
-          document.getElementById("orçamento-popup").style.visibility = "hidden";
-      }, 500);
-  }
-</script>
--->
 
 
-
-
-<!-- Botão flutuante do WhatsApp -->
-<a href="https://wa.me/5562985558320" target="_blank" class="whatsapp-button" id="whatsappButton">
-  &#x1F4AC;
-</a>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    var whatsappButton = document.getElementById("whatsappButton");
-
-    // Mostrar o botão após 5 segundos (independente do scroll)
-    setTimeout(function() {
-        whatsappButton.classList.add("show-whatsapp");
-    }, 5000);
-
-    // Mostrar o botão ao rolar 100px para baixo
-    window.addEventListener("scroll", function() {
-        if (window.scrollY > 100) {
-            whatsappButton.classList.add("show-whatsapp");
-        } else {
-            whatsappButton.classList.remove("show-whatsapp");
-        }
-    });
-});
-</script>
-
-
-<script>
-  const video = document.getElementById('meuVideo');
-  const playButton = document.getElementById('playButton');
-
-  playButton.addEventListener('click', () => {
-    video.play();
-    playButton.style.display = 'none';
-  });
-
-  video.addEventListener('ended', () => {
-    playButton.style.display = 'flex';
-  });
-
-  video.addEventListener('click', () => {
-    if (video.paused) {
-      video.play();
-      playButton.style.display = 'none';
-    } else {
-      video.pause();
-      playButton.style.display = 'flex';
-    }
-  });
-</script>
-<script>
-  // Exibir o bloco de orçamento após 2 segundos
-  setTimeout(() => {
-    document.getElementById("orçamento-popup").style.visibility = "visible";
-    document.getElementById("orçamento-popup").style.opacity = "1";
-  }, 20000);
-
-  // Função para fechar o bloco
-  function fecharOrcamento() {
-    document.getElementById("orçamento-popup").style.opacity = "0";
+  <script>
     setTimeout(() => {
-      document.getElementById("orçamento-popup").style.visibility = "hidden";
-    }, 500);
-  }
+      document.getElementById("preloader").style.display = "none";
+      let siteContent = document.getElementById("site-content");
+      siteContent.style.display = "block";
+      siteContent.style.opacity = "1"; // Transição suave de entrada
+    }, 4500); // Tempo em milissegundos (4,5 segundos)
+  </script>
 
-  // Capturar envio do formulário
-  document.getElementById("orcamento-form").addEventListener("submit", function(event) {
-    event.preventDefault(); // Evita o recarregamento da página
-    alert("Solicitação enviada com sucesso! Entraremos em contato.");
-    fecharOrcamento(); // Fecha o popup após enviar
-  });
-</script>
-
- <!-- JavaScript para ocultar o preloader e exibir o site -->
- <script>
-  setTimeout(() => {
-    document.getElementById("preloader").style.display = "none";
-    let siteContent = document.getElementById("site-content");
-    siteContent.style.display = "block";
-    siteContent.style.opacity = "1"; // Transição suave de entrada
-  }, 4500); // Tempo em milissegundos (4,5 segundos)
-</script>
-
-<script>
-  document.addEventListener("mouseleave", function(event) {
+  <script>
+    document.addEventListener("mouseleave", function (event) {
       if (event.clientY < 10) { // Detecta quando o mouse sai do topo da página
-          document.getElementById("bloco-emergencia").style.display = "block";
+        document.getElementById("bloco-emergencia").style.display = "block";
       }
-  });
+    });
 
-  function fecharBloco() {
+    function fecharBloco() {
       document.getElementById("bloco-emergencia").style.display = "none";
-  }
+    }
 
-  function chamarEmergencia() {
+    function chamarEmergencia() {
       // Número do WhatsApp (substitua pelo correto)
       let telefone = "5562991494589"; // Exemplo: 55 (Brasil) + 11 (DDD) + 999999999 (número)
 
@@ -1311,16 +1294,40 @@ document.addEventListener("DOMContentLoaded", function() {
 
       // Codifica a mensagem para a URL do WhatsApp
       let url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
-      
+
       // Redireciona para o WhatsApp
       window.open(url, "_blank");
 
       // Fecha o bloco de emergência
       fecharBloco();
-  }
+    }
+  </script>
+
+<script>
+  document.getElementById("formulario-contato").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const nome = document.getElementById("nome").value;
+    const email = document.getElementById("email").value;
+    const mensagem = document.getElementById("mensagem").value;
+
+    fetch("https://script.google.com/macros/s/AKfycbwebGxCcg8TEGBlzTGj29WCtk37B0Zg15Ghz7S2wxVyztM14ejC63fP-MxXt-9uvkY/exec", {
+      method: "POST",
+      mode: "no-cors", // se quiser evitar erro de CORS
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      body: `nome=${encodeURIComponent(nome)}&email=${encodeURIComponent(email)}&mensagem=${encodeURIComponent(mensagem)}`
+    }).then(() => {
+      alert("Mensagem enviada com sucesso!");
+      document.getElementById("formulario-contato").reset();
+    }).catch((error) => {
+      console.error("Erro ao enviar:", error);
+      alert("Houve um erro. Tente novamente.");
+    });
+  });
 </script>
 
-
-
 </body>
+
 </html>
