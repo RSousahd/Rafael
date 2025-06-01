@@ -1213,111 +1213,151 @@
   </section>
 
 
-  <!-- Seção Contato -->
+ <!-- Seção Contato -->
 <section id="contact" class="section">
   <h2>Contato</h2>
   <p>Entre em contato conosco para mais informações ou para solicitar um orçamento.</p>
   <form id="formulario-contato">
     <div class="form-group">
       <label for="nome">Nome:</label>
-      <input type="text" id="nome" name="nome" required>
+      <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
     </div>
+
+    <div class="form-group">
+      <label for="telefone">Telefone:</label>
+      <input type="tel" id="telefone" name="telefone" required placeholder="(XX) XXXXX-XXXX" pattern="\\(?\\d{2}\\)?\\s?\\d{4,5}-?\\d{4}">
+    </div>
+
     <div class="form-group">
       <label for="email">E-mail:</label>
-      <input type="email" id="email" name="email" required>
+      <input type="email" id="email" name="email" required placeholder="exemplo@dominio.com">
     </div>
+
     <div class="form-group">
-      <label for="mensagem">Mensagem:</label>
-      <textarea id="mensagem" name="mensagem" required></textarea>
+      <label for="endereco">Endereço:</label>
+      <textarea id="endereco" name="endereco" rows="2" required placeholder="Rua, número, bairro, cidade"></textarea>
     </div>
+
+    <div class="form-group">
+      <label for="tipo-servico">Tipo de serviço desejado:</label>
+      <select id="tipo-servico" name="tipo-servico" required>
+        <option value="">Selecione...</option>
+        <option value="Manutenção elétrica">Manutenção elétrica</option>
+        <option value="Reparo hidráulico">Reparo hidráulico</option>
+        <option value="Troca de fechadura">Troca de fechadura</option>
+        <option value="Pintura">Pintura</option>
+        <option value="Outros">Outros</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Urgência:</label><br>
+      <label><input type="radio" name="urgencia" value="Urgente" required> Urgente</label>
+      <label><input type="radio" name="urgencia" value="Normal"> Normal</label>
+    </div>
+
+    <div class="form-group">
+      <label>Preferência para contato:</label><br>
+      <label><input type="checkbox" name="contato" value="Telefone" checked> Telefone</label>
+      <label><input type="checkbox" name="contato" value="E-mail"> E-mail</label>
+      <label><input type="checkbox" name="contato" value="WhatsApp"> WhatsApp</label>
+    </div>
+
+    <div class="form-group">
+      <label for="mensagem">Mensagem adicional:</label>
+      <textarea id="mensagem" name="mensagem" rows="4" placeholder="Descreva detalhes ou dúvidas..." ></textarea>
+    </div>
+
     <button type="submit" class="cta-btn">Enviar</button>
   </form>
 </section>
 
-  <!-- Rodapé -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>Rafael SOS Pedreiro</h3>
-        <p>Comprometidos com a excelência e qualidade em todas as obras.</p>
-      </div>
-      <div class="footer-section">
-        <h3>Links Rápidos</h3>
-        <p><a href="#about">Sobre</a></p>
-        <p><a href="#services">Serviços</a></p>
-        <p><a href="#portfolio">Portfólio</a></p>
-        <p><a href="#contact">Contato</a></p>
-      </div>
-      <div class="footer-section">
-        <h3>Contato</h3>
-        <p>Email: sosresolverr@gmail.com</p>
-        <p>Telefone: (62) 985558320</p>
-      </div>
+<!-- Rodapé -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>Rafael SOS Pedreiro</h3>
+      <p>Comprometidos com a excelência e qualidade em todas as obras.</p>
     </div>
-  </footer>
+    <div class="footer-section">
+      <h3>Links Rápidos</h3>
+      <p><a href="#about">Sobre</a></p>
+      <p><a href="#services">Serviços</a></p>
+      <p><a href="#portfolio">Portfólio</a></p>
+      <p><a href="#contact">Contato</a></p>
+    </div>
+    <div class="footer-section">
+      <h3>Contato</h3>
+      <p>Email: sosresolverr@gmail.com</p>
+      <p>Telefone: (62) 98555-8320</p>
+    </div>
+  </div>
+</footer>
 
+<script>
+  setTimeout(() => {
+    document.getElementById("preloader").style.display = "none";
+    let siteContent = document.getElementById("site-content");
+    siteContent.style.display = "block";
+    siteContent.style.opacity = "1"; // Transição suave de entrada
+  }, 4500);
+</script>
 
-  <script>
-    setTimeout(() => {
-      document.getElementById("preloader").style.display = "none";
-      let siteContent = document.getElementById("site-content");
-      siteContent.style.display = "block";
-      siteContent.style.opacity = "1"; // Transição suave de entrada
-    }, 4500); // Tempo em milissegundos (4,5 segundos)
-  </script>
-
-  <script>
-    document.addEventListener("mouseleave", function (event) {
-      if (event.clientY < 10) { // Detecta quando o mouse sai do topo da página
-        document.getElementById("bloco-emergencia").style.display = "block";
-      }
-    });
-
-    function fecharBloco() {
-      document.getElementById("bloco-emergencia").style.display = "none";
+<script>
+  document.addEventListener("mouseleave", function (event) {
+    if (event.clientY < 10) {
+      document.getElementById("bloco-emergencia").style.display = "block";
     }
+  });
 
-    function chamarEmergencia() {
-      // Número do WhatsApp (substitua pelo correto)
-      let telefone = "5562991494589"; // Exemplo: 55 (Brasil) + 11 (DDD) + 999999999 (número)
+  function fecharBloco() {
+    document.getElementById("bloco-emergencia").style.display = "none";
+  }
 
-      // Mensagem personalizada para o WhatsApp
-      let mensagem = `🚨 *Pedido de Emergência!* 🚨\n\n`;
-      mensagem += `🛠️ *Serviços desejados:*\n`;
-      mensagem += `✅ Manutenção elétrica\n`;
-      mensagem += `✅ Reparo hidráulico\n`;
-      mensagem += `✅ Troca de fechadura\n`;
-      mensagem += `✅ Pintura urgente\n\n`;
-      mensagem += `📍 *Endereço:* (informe aqui)\n`;
-      mensagem += `📞 *Telefone:* (informe aqui)\n`;
-      mensagem += `💰 *Orçamento:* Aguardo valores\n`;
+  function chamarEmergencia() {
+    let telefone = "5562991494589";
+    let mensagem = `🚨 *Pedido de Emergência!* 🚨\n\n` +
+                   `🛠️ *Serviços desejados:*\n` +
+                   `✅ Manutenção elétrica\n` +
+                   `✅ Reparo hidráulico\n` +
+                   `✅ Troca de fechadura\n` +
+                   `✅ Pintura urgente\n\n` +
+                   `📍 *Endereço:* (informe aqui)\n` +
+                   `📞 *Telefone:* (informe aqui)\n` +
+                   `💰 *Orçamento:* Aguardo valores\n`;
 
-      // Codifica a mensagem para a URL do WhatsApp
-      let url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
-
-      // Redireciona para o WhatsApp
-      window.open(url, "_blank");
-
-      // Fecha o bloco de emergência
-      fecharBloco();
-    }
-  </script>
+    let url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
+    window.open(url, "_blank");
+    fecharBloco();
+  }
+</script>
 
 <script>
   document.getElementById("formulario-contato").addEventListener("submit", function (e) {
     e.preventDefault();
 
     const nome = document.getElementById("nome").value;
+    const telefone = document.getElementById("telefone").value;
     const email = document.getElementById("email").value;
+    const endereco = document.getElementById("endereco").value;
+    const tipoServico = document.getElementById("tipo-servico").value;
+    const urgencia = document.querySelector('input[name="urgencia"]:checked')?.value || "";
+    const contatoElems = document.querySelectorAll('input[name="contato"]:checked');
     const mensagem = document.getElementById("mensagem").value;
+
+    let preferenciaContato = [];
+    contatoElems.forEach(el => preferenciaContato.push(el.value));
+    preferenciaContato = preferenciaContato.join(", ");
+
+    const body = `nome=${encodeURIComponent(nome)}&telefone=${encodeURIComponent(telefone)}&email=${encodeURIComponent(email)}&endereco=${encodeURIComponent(endereco)}&tipo-servico=${encodeURIComponent(tipoServico)}&urgencia=${encodeURIComponent(urgencia)}&preferencia-contato=${encodeURIComponent(preferenciaContato)}&mensagem=${encodeURIComponent(mensagem)}`;
 
     fetch("https://script.google.com/macros/s/AKfycbwebGxCcg8TEGBlzTGj29WCtk37B0Zg15Ghz7S2wxVyztM14ejC63fP-MxXt-9uvkY/exec", {
       method: "POST",
-      mode: "no-cors", // se quiser evitar erro de CORS
+      mode: "no-cors",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded"
       },
-      body: `nome=${encodeURIComponent(nome)}&email=${encodeURIComponent(email)}&mensagem=${encodeURIComponent(mensagem)}`
+      body: body
     }).then(() => {
       alert("Mensagem enviada com sucesso!");
       document.getElementById("formulario-contato").reset();
@@ -1327,6 +1367,7 @@
     });
   });
 </script>
+
 
 </body>
 
