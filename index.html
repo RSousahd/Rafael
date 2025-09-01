@@ -1,1337 +1,691 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pedreiro de Elite - Área Profissional</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Profissionais especializados em construção, pintura e reforma em Aparecida de Goiânia, Setor Garavelo, Bueno, Marista e Jardim América.">
-  <meta name="keywords"
-    content="construção, pintura, reforma, pedreiro, pintor, mestre de obras, Aparecida de Goiânia, Setor Garavelo, Bueno, Marista, Jardim América">
-  <meta name="author" content="Nome da Sua Empresa">
-  <meta name="robots" content="index, follow">
-
-  <!-- Open Graph para redes sociais -->
-  <meta property="og:title" content="Construção, Pintura e Reforma em Aparecida de Goiânia e Região">
-  <meta property="og:description"
-    content="Especialistas em construção e reforma para casas e comércios na região do Setor Garavelo, Bueno e Jardim América.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://pdepedreiro.com.br">
-  <meta property="og:image" content="https://pdepedreiro.com.br/img/Rafael SOS.png">
-  <!-- Substituir pela imagem do seu site -->
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="img/favicon/gd.png">
-  <!-- Adicione isso no <head> do seu HTML se ainda não tiver -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <style>
-    /* Estilo do Preloader */
-    #preloader {
-      position: fixed;
-      width: 100%;
-      height: 100vh;
-      background-color: #111;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      color: #fff;
-      font-family: Arial, sans-serif;
-    }
-
-    /* Ajuste da Logo no Preloader */
-    #preloader img {
-      width: 180px;
-      animation: pulse 1.5s infinite alternate ease-in-out;
-    }
-
-    /* Texto animado */
-    .typing {
-      font-size: 1.5em;
-      margin-top: 10px;
-      overflow: hidden;
-      white-space: nowrap;
-      border-right: 2px solid #fff;
-      width: 0;
-      animation: typing 2s steps(12, end) forwards, blinkCursor 0.7s infinite;
-    }
-
-    @keyframes typing {
-      from {
-        width: 0;
-      }
-
-      to {
-        width: 160px;
-      }
-    }
-
-    @keyframes blinkCursor {
-      50% {
-        border-color: transparent;
-      }
-    }
-
-    /* Loader Circular */
-    .loader {
-      width: 50px;
-      height: 50px;
-      border: 5px solid rgba(255, 255, 255, 0.3);
-      border-top-color: #f39c12;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin-top: 20px;
-    }
-
-    @keyframes spin {
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    /* Animação da Logo */
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-        opacity: 0.8;
-      }
-
-      100% {
-        transform: scale(1.1);
-        opacity: 1;
-      }
-    }
-
-    /* Transição ao entrar no site */
-    #site-content {
-      display: none;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f4f4f9;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    header {
-      background-color: rgba(0, 0, 0, 0.9);
-      padding: 15px 0;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease-in-out;
-    }
-
-    header .container {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 20px;
-    }
-
-    .header-hidden {
-      transform: translateY(-100%);
-    }
-
-    /* Logo */
-    header .logo img {
-      width: 150px;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    /* Animação da Logo */
-    @keyframes moveLogo {
-      0% {
-        transform: translateX(0);
-      }
-
-      100% {
-        transform: translateX(10px);
-      }
-    }
-
-    /* Menu Desktop */
-    .menu {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    .menu li {
-      display: inline;
-    }
-
-    .menu a {
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-      transition: 0.3s;
-      padding: 10px;
-    }
-
-    .menu a:hover {
-      color: #f39c12;
-      text-shadow: 0 0 10px rgba(243, 156, 18, 0.8);
-    }
-
-    /* Menu Responsivo */
-    .menu-icon {
-      font-size: 30px;
-      cursor: pointer;
-      display: none;
-      color: white;
-    }
-
-    /* Esconder o checkbox */
-    #menu-toggle {
-      display: none;
-    }
-
-    /* Responsividade */
-    @media (max-width: 768px) {
-      .menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background: #333;
-        width: 100%;
-        text-align: center;
-        padding: 10px 0;
-      }
-
-      .menu li {
-        margin: 10px 0;
-      }
-
-      #menu-toggle:checked+.menu-icon+nav .menu {
-        display: flex;
-      }
-
-      .menu-icon {
-        display: block;
-      }
-    }
-
-    /* --- Seção Parceria --- */
-    #parceria {
-      padding: 80px 20px;
-      background: #222;
-      text-align: center;
-      color: rgb(51, 1, 253);
-    }
-
-    #parceria h2 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-    }
-
-    #parceria p {
-      font-size: 1.2em;
-      max-width: 800px;
-      margin: auto;
-      line-height: 1.6;
-    }
-
-    #parceria .parceiros {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 30px;
-    }
-
-    .parceiro {
-      width: 150px;
-      height: 150px;
-      background: white;
-      margin: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
-      transition: transform 0.3s;
-    }
-
-    .parceiro:hover {
-      transform: scale(1.1);
-    }
-
-    /* --- Hero / Apresentação --- */
-    .hero {
-      position: relative;
-      height: 500px;
-      background: url('img/hero.jpg') no-repeat center center/cover;
-    }
-
-    .hero .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 0 20px;
-    }
-
-    .hero .overlay h1 {
-      color: #fff;
-      font-size: 3em;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    .hero .overlay p {
-      color: #ddd;
-      font-size: 1.5em;
-    }
-
-    /* --- Botão WhatsApp --- */
-    .whatsapp-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: linear-gradient(45deg, #25d366, #128C7E);
-      color: white;
-      padding: 15px;
-      border-radius: 50%;
-      font-size: 24px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
-
-    .whatsapp-button:hover {
-      transform: scale(1.1);
-    }
-
-    /* Mostrar botão do WhatsApp ao rolar */
-    .show-whatsapp {
-      display: block !important;
-    }
-
-
-    /* Hero / Apresentação com Background Impactante */
-    .hero {
-      position: relative;
-      height: 500px;
-      background: url('img/hero.jpg') no-repeat center center/cover;
-      /* Substitua pelo caminho da sua imagem impactante */
-    }
-
-    /* Adiciona e posiciona o boneco */
-    .boneco {
-      position: absolute;
-      bottom: 0;
-      /* Mantém no chão da seção */
-      left: 10%;
-      /* Posição inicial */
-      width: 150px;
-      /* Tamanho ajustável */
-      height: auto;
-      animation: moveBoneco 3s infinite ease-in-out alternate;
-      /* Animação */
-    }
-
-    /* Animação do boneco se movendo */
-    @keyframes moveBoneco {
-      0% {
-        transform: translateX(0) scale(1);
-      }
-
-      100% {
-        transform: translateX(20px) scale(1.1);
-        /* Move um pouco e aumenta ligeiramente */
-      }
-    }
-
-    .hero .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 0 20px;
-    }
-
-    .hero .overlay h1 {
-      color: #fff;
-      font-size: 3em;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    .hero .overlay p {
-      color: #ddd;
-      font-size: 1.5em;
-    }
-
-    /* Configuração geral do container */
-    .slider-container {
-      overflow: hidden;
-      white-space: nowrap;
-      width: 100%;
-      background: #333;
-      padding: 10px 0;
-    }
-
-    /* Slider animado */
-    .slider {
-      display: flex;
-      gap: 30px;
-      /* Espaço entre os itens */
-      animation: scroll 25s linear infinite;
-      width: max-content;
-    }
-
-    /* Estilização dos slides */
-    .slide {
-      font-size: 20px;
-      font-weight: bold;
-      color: white;
-      padding: 10px 20px;
-      background: #007bff;
-      border-radius: 5px;
-      white-space: nowrap;
-    }
-
-    /* Animação contínua */
-    @keyframes scroll {
-      from {
-        transform: translateX(0);
-      }
-
-      to {
-        transform: translateX(-50%);
-      }
-    }
-
-    /* Banner de Chamada à Ação */
-    .banner {
-      background: linear-gradient(90deg, #ff6600, #ffcc00);
-      padding: 40px;
-      text-align: center;
-      color: #222;
-    }
-
-    .banner h2 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
-
-    .banner p {
-      font-size: 1.2em;
-      margin-bottom: 20px;
-    }
-
-    .banner .cta-btn {
-      background: #222;
-      color: #fff;
-      padding: 15px 30px;
-      font-size: 1.2em;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
-
-    .banner .cta-btn:hover {
-      background: #444;
-    }
-
-    /* Bloco Dinâmico Criativo */
-    .dynamic-block {
-      background: linear-gradient(45deg, #ff6600, #ffcc00);
-      color: #222;
-      padding: 40px;
-      margin: 50px auto;
-      border-radius: 10px;
-      max-width: 1200px;
-      text-align: center;
-      font-size: 1.5em;
-      animation: pulse 2s infinite alternate;
-    }
-
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-      }
-
-      100% {
-        transform: scale(1.05);
-      }
-    }
-
-    .dynamic-block strong {
-      color: #0044cc;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Seções Gerais */
-    .section {
-      padding: 60px 20px;
-    }
-
-    .section h2 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-      text-align: center;
-      color: #222;
-    }
-
-    .section p {
-      font-size: 1.1em;
-      margin-bottom: 20px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-    }
-
-    /* Seção Sobre */
-    #about {
-      background: #fff;
-    }
-
-    /* Seção Serviços */
-    #services {
-      background: #f9f9f9;
-    }
-
-    #services .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    #services .service {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s;
-    }
-
-    #services .service:hover {
-      transform: scale(1.05);
-    }
-
-    #services .service h3 {
-      margin-bottom: 10px;
-      color: #ff6600;
-    }
-
-    /* Estilizando a grade do portfólio */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      padding: 20px;
-      justify-content: center;
-    }
-
-    /* Estilizando os itens do portfólio */
-    .portfolio-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 10px;
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .portfolio-item img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 10px;
-      transition: transform 0.3s ease-in-out;
-    }
-
-    /* Efeito ao passar o mouse */
-    .portfolio-item:hover {
-      transform: scale(1.05);
-    }
-
-    .portfolio-item:hover img {
-      transform: scale(1.1);
-    }
-
-
-    /* Seção Depoimentos */
-    #testimonials {
-      background: #f9f9f9;
-    }
-
-    #testimonials .testimonial {
-      max-width: 800px;
-      margin: auto;
-      padding: 20px;
-      font-style: italic;
-    }
-
-    /* Estilizando a seção */
-    #nossos-servicos {
-      text-align: center;
-      padding: 60px 20px;
-      background-color: #f8f9fa;
-    }
-
-    /* Título e subtítulo */
-    .section-title {
-      font-size: 2.5em;
-      font-weight: bold;
-      color: #333;
-      margin-bottom: 10px;
-    }
-
-    .section-subtitle {
-      font-size: 1.2em;
-      color: #666;
-      margin-bottom: 40px;
-    }
-
-    /* Grade de serviços */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    /* Blocos de serviço */
-    .service {
-      background: #fff;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .service:hover {
-      transform: translateY(-5px);
-    }
-
-    /* Ícones de serviço */
-    .service-icon {
-      font-size: 2.5em;
-      margin-bottom: 15px;
-      color: #f39c12;
-    }
-
-    /* Listagem de serviços */
-    .service ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .service ul li {
-      font-size: 1em;
-      color: #444;
-      padding: 5px 0;
-    }
-
-
-    /* Seção Contato */
-    #contact {
-      background: #fff;
-    }
-
-    #contact form {
-      max-width: 600px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    #contact input,
-    #contact textarea {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    #contact button {
-      padding: 15px;
-      background: #ff6600;
-      border: none;
-      border-radius: 5px;
-      color: #fff;
-      font-size: 1em;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    #contact button:hover {
-      background: #ffcc00;
-    }
-
-    /* Estilizando o bloco de orçamento */
-    .orçamento-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.7);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      visibility: hidden;
-      opacity: 0;
-      transition: opacity 0.5s, visibility 0.5s;
-    }
-
-    /* Caixa do orçamento */
-    .orçamento-box {
-      background: white;
-      padding: 20px;
-      width: 350px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      text-align: center;
-      position: relative;
-    }
-
-    /* Botão de fechar */
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 1.5em;
-      cursor: pointer;
-      color: #333;
-    }
-
-    /* Estilização geral do formulário */
-    .formulario-container {
-      max-width: 600px;
-      margin: 50px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      text-align: center;
-    }
-
-    /* Título do formulário */
-    .formulario-container h2 {
-      margin-bottom: 20px;
-      font-size: 24px;
-      color: #222;
-    }
-
-    /* Inputs do formulário */
-    .formulario-container input,
-    .formulario-container select,
-    .formulario-container textarea {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 16px;
-      transition: 0.3s;
-    }
-
-    /* Efeito ao focar no input */
-    .formulario-container input:focus,
-    .formulario-container select:focus,
-    .formulario-container textarea:focus {
-      border-color: #007bff;
-      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-    }
-
-    /* Botão de envio */
-    .formulario-container button {
-      width: 100%;
-      padding: 12px;
-      background: #007bff;
-      color: #fff;
-      font-size: 18px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    /* Efeito hover no botão */
-    .formulario-container button:hover {
-      background: #0056b3;
-    }
-
-    /* Mensagem de erro */
-    .mensagem-erro {
-      color: red;
-      font-size: 14px;
-      margin-top: 5px;
-    }
-
-    /* Responsividade */
-    @media (max-width: 768px) {
-      .formulario-container {
-        width: 90%;
-        padding: 15px;
-      }
-    }
-
-
-    /* Formulário */
-    .orçamento-box input,
-    .orçamento-box select,
-    .orçamento-box textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 5px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1em;
-    }
-
-    .orçamento-box button {
-      background: #f39c12;
-      color: white;
-      font-size: 2.1em;
-      border: none;
-      padding: 10px;
-      width: 100%;
-      margin-top: 10px;
-      cursor: pointer;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
-
-    .orçamento-box button:hover {
-      background: #e67e22;
-    }
-
-    #parceria {
-      background-color: #f8f8f8;
-      padding: 50px 20px;
-      text-align: center;
-    }
-
-    .parceria-container {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 20px;
-      flex-wrap: wrap;
-    }
-
-    .parceria-item {
-      background: #ffffff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      max-width: 300px;
-    }
-
-    .parceria-btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: #25D366;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .parceria-btn:hover {
-      background: #1da851;
-    }
-
-    /* Área de Vídeo com Efeito de Fundo Integrado */
-    .video-container {
-      margin-top: 50px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
-
-    .video-container video {
-      width: 80%;
-      max-width: 800px;
-      mix-blend-mode: multiply;
-      /* Integra o vídeo com o fundo da página */
-      background: none;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Rodapé */
-    footer {
-      background: #222;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-
-    footer .footer-content {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    footer .footer-section {
-      flex: 1;
-      margin: 10px;
-    }
-
-    footer .footer-section h3 {
-      margin-bottom: 10px;
-    }
-
-    footer .footer-section p {
-      font-size: 0.9em;
-      color: #ddd;
-    }
-
-    /* Estilos do Bloco de Emergência */
-    .bloco-emergencia {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 400px;
-      background: white;
-      padding: 20px;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-      border-radius: 10px;
-      text-align: center;
-      z-index: 1000;
-    }
-
-    .bloco-emergencia .bloco-conteudo h2 {
-      margin-bottom: 10px;
-      font-size: 20px;
-      color: #333;
-    }
-
-    .bloco-emergencia p {
-      font-size: 16px;
-      color: #666;
-    }
-
-    .bloco-emergencia button {
-      margin: 10px 5px;
-      padding: 10px 20px;
-      font-size: 16px;
-      background: #ff5733;
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-
-    .bloco-emergencia button:hover {
-      background: #e04e2a;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOOB Manutenção & Construção | Serviços de Pedreiro em Aparecida de Goiânia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E40AF',
+                        secondary: '#F59E0B',
+                        accent: '#DC2626',
+                        dark: '#1F2937',
+                        light: '#F3F4F6',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .plan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .popular-plan {
+            border: 2px solid #F59E0B;
+            position: relative;
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background-color: #F59E0B;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+        
+        .whatsapp-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.03);
+        }
+    </style>
 </head>
+<body class="font-sans bg-gray-50">
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="bg-primary text-white p-2 rounded-lg mr-3">
+                    <i class="fas fa-hammer text-2xl"></i>
+                </div>
+                <h1 class="text-xl font-bold text-dark">MOOB <span class="text-primary">Manutenção & Construção</span></h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#inicio" class="text-dark hover:text-primary font-medium">Início</a>
+                <a href="#servicos" class="text-dark hover:text-primary font-medium">Serviços</a>
+                <a href="#planos" class="text-dark hover:text-primary font-medium">Planos</a>
+                <a href="#sobre" class="text-dark hover:text-primary font-medium">Sobre</a>
+                <a href="#depoimentos" class="text-dark hover:text-primary font-medium">Depoimentos</a>
+                <a href="#contato" class="text-dark hover:text-primary font-medium">Contato</a>
+            </nav>
+            
+            <div class="hidden md:block">
+                <a href="#orcamento" class="bg-primary hover:bg-blue-800 text-white px-4 py-2 rounded-lg font-medium transition duration-300">
+                    Peça um Orçamento
+                </a>
+            </div>
+            
+            <button class="md:hidden text-dark" id="menu-toggle">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-white w-full py-4 px-4 shadow-lg" id="mobile-menu">
+            <div class="flex flex-col space-y-4">
+                <a href="#inicio" class="text-dark hover:text-primary font-medium">Início</a>
+                <a href="#servicos" class="text-dark hover:text-primary font-medium">Serviços</a>
+                <a href="#planos" class="text-dark hover:text-primary font-medium">Planos</a>
+                <a href="#sobre" class="text-dark hover:text-primary font-medium">Sobre</a>
+                <a href="#depoimentos" class="text-dark hover:text-primary font-medium">Depoimentos</a>
+                <a href="#contato" class="text-dark hover:text-primary font-medium">Contato</a>
+                <a href="#orcamento" class="bg-primary hover:bg-blue-800 text-white px-4 py-2 rounded-lg font-medium text-center">
+                    Peça um Orçamento
+                </a>
+            </div>
+        </div>
+    </header>
 
-<body>
-  <!-- Preloader (antes do conteúdo principal) -->
-  <div id="preloader">
-    <img src="Img/Rafael SOS.png" alt="Carregando..."> <!-- Substitua pelo caminho correto da sua logo -->
-    <div class="typing">Carregando...</div> <!-- Texto animado -->
-    <div class="loader"></div> <!-- Loader circular -->
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-image pt-32 pb-20 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Sua casa sempre em ordem, do básico ao premium</h1>
+                <p class="text-xl mb-8">Serviços de pedreiro e planos de manutenção acessíveis para todas as classes sociais em Aparecida de Goiânia e região.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#planos" class="bg-secondary hover:bg-yellow-600 text-white px-6 py-3 rounded-lg font-bold text-center transition duration-300">
+                        Quero meu Plano
+                    </a>
+                    <a href="https://wa.me/5562985558320" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-bold text-center transition duration-300">
+                        <i class="fab fa-whatsapp mr-2"></i> Falar no WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços Section -->
+    <section id="servicos" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-dark mb-4">Nossos Serviços de Pedreiro</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Serviços profissionais com qualidade e garantia para sua residência ou comércio.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Serviço 1 -->
+                <div class="bg-light p-6 rounded-lg hover:shadow-lg transition duration-300">
+                    <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-home text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">Reformas e Acabamentos</h3>
+                    <p class="text-gray-600">Reformas completas, demolições, revestimentos cerâmicos, contrapisos e muito mais para renovar seus ambientes.</p>
+                </div>
+                
+                <!-- Serviço 2 -->
+                <div class="bg-light p-6 rounded-lg hover:shadow-lg transition duration-300">
+                    <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-paint-roller text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">Pintura e Reparos</h3>
+                    <p class="text-gray-600">Pintura interna e externa, tratamento de paredes, reparos em gesso, drywall e correção de infiltrações.</p>
+                </div>
+                
+                <!-- Serviço 3 -->
+                <div class="bg-light p-6 rounded-lg hover:shadow-lg transition duration-300">
+                    <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-tools text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">Elétrica e Hidráulica Simples</h3>
+                    <p class="text-gray-600">Instalação e manutenção básica de elétrica e hidráulica residencial, com segurança e qualidade.</p>
+                </div>
+                
+                <!-- Serviço 4 -->
+                <div class="bg-light p-6 rounded-lg hover:shadow-lg transition duration-300">
+                    <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-border-all text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">Construção de Muros e Calçadas</h3>
+                    <p class="text-gray-600">Construção e reforma de muros, calçadas, pequenas estruturas e serviços de alvenaria em geral.</p>
+                </div>
+                
+                <!-- Serviço 5 -->
+                <div class="bg-light p-6 rounded-lg hover:shadow-lg transition duration-300">
+                    <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-exclamation-triangle text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">Manutenção Emergencial</h3>
+                    <p class="text-gray-600">Atendimento rápido para problemas urgentes como vazamentos, quedas de reboco, problemas estruturais simples.</p>
+                </div>
+                
+                <!-- Serviço 6 -->
+                <div class="bg-light p-6 rounded-lg hover:shadow-lg transition duration-300">
+                    <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-clipboard-list text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">Consultoria e Orçamentos</h3>
+                    <p class="text-gray-600">Avaliação técnica gratuita para seu projeto, com orçamento detalhado e sem compromisso.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planos Section -->
+<section id="planos" class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-dark mb-4">Escolha o plano ideal para sua casa</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Planos de manutenção residencial acessíveis, que cabem no seu bolso e trazem tranquilidade para sua família.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <!-- Plano D -->
+      <div class="bg-white p-6 rounded-lg shadow-md plan-card transition duration-300">
+        <h3 class="text-xl font-bold text-dark mb-2">Classe D</h3>
+        <p class="text-gray-600 mb-4">Básico</p>
+        <div class="text-3xl font-bold text-primary mb-4">R$ 13,99<span class="text-lg">/mês</span></div>
+        <ul class="space-y-3 mb-6">
+          <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i><span>1 visita técnica/ano</span></li>
+          <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i><span>Troca de lâmpadas e torneiras</span></li>
+          <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i><span>Pequenos reparos hidráulicos</span></li>
+          <li class="flex items-center text-gray-400"><i class="fas fa-times text-red-400 mr-2"></i><span>Atendimento emergencial</span></li>
+          <li class="flex items-center text-gray-400"><i class="fas fa-times text-red-400 mr-2"></i><span>Pintura ou serviços complexos</span></li>
+        </ul>
+        <a href="https://wa.me/5562985558320?text=Quero%20assinar%20o%20plano%20Classe%20D" class="block bg-gray-200 hover:bg-gray-300 text-dark text-center py-2 rounded-lg font-medium transition duration-300">
+          Assinar Plano
+        </a>
+      </div>
+
+      <!-- Plano C -->
+      <div class="bg-white p-6 rounded-lg shadow-lg popular-plan plan-card transition duration-300">
+        <div class="popular-badge">MAIS POPULAR</div>
+        <h3 class="text-xl font-bold text-dark mb-2">Classe C</h3>
+        <p class="text-gray-600 mb-4">Intermediário</p>
+        <div class="text-3xl font-bold text-primary mb-4">R$ 29,99<span class="text-lg">/mês</span></div>
+        <ul class="space-y-3 mb-6">
+          <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i><span>2 visitas técnicas/ano</span></li>
+          <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i><span>Troca de tomadas e interruptores</span></li>
+          <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i><span>Revisão de telhado e calhas (6 em 6 meses)</span></li>
+          <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i><span>Pintura básica com tinta inclusa</span></li>
+          <li class="flex items-center text-gray-400"><i class="fas fa-times text-red-400 mr-2"></i><span>Serviços complexos</span></li>
+        </ul>
+        <a href="https://wa.me/5562985558320?text=Quero%20assinar%20o%20plano%20Classe%20C" class="block bg-yellow-500 hover:bg-yellow-600 text-white text-center py-2 rounded-lg font-medium transition duration-300">
+          Assinar Plano
+        </a>
+      </div>
+
+      <!-- Plano B -->
+      <div class="bg-white p-6 rounded-lg shadow-md plan-card transition duration-300">
+        <h3 class="text-xl font-bold text-dark mb-2">Classe B</h3>
+        <p class="text-gray-600 mb-4">Avançado</p>
+        <div class="text-3xl font-bold text-primary mb-4">R$ 49,99<span class="text-lg">/mês</span></div>
+        <ul class="space-y-3 mb-6">
+          <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i><span>4 visitas técnicas/ano</span></li>
+          <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i><span>Pintura de fachada e calçada</span></li>
+          <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i><span>Desentupimento simples (1x/ano)</span></li>
+          <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i><span>Manutenção elétrica intermediária</span></li>
+          <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i><span>Atendimento em até 24h</span></li>
+        </ul>
+        <a href="https://wa.me/5562985558320?text=Quero%20assinar%20o%20plano%20Classe%20B" class="block bg-blue-600 hover:bg-blue-700 text-white text-center py-2 rounded-lg font-medium transition duration-300">
+          Assinar Plano
+        </a>
+      </div>
+
+      <!-- Plano A -->
+      <div class="bg-white p-6 rounded-lg shadow-md plan-card transition duration-300">
+        <h3 class="text-xl font-bold text-dark mb-2">Classe A</h3>
+        <p class="text-gray-600 mb-4">Premium</p>
+        <div class="text-3xl font-bold text-primary mb-4">R$ 79,99<span class="text-lg">/mês</span></div>
+        <ul class="space-y-3 mb-6">
+          <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i><span>Visitas ilimitadas sob demanda</span></li>
+          <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i><span>Manutenção de até 3 ar-condicionados/semestre</span></li>
+          <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i><span>Limpeza de lote a cada 6 meses</span></li>
+          <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i><span>Atendimento VIP 24h</span></li>
+          <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i><span>Higienização de caixa d’água (1x/ano)</span></li>
+        </ul>
+        <a href="https://wa.me/5562985558320?text=Quero%20assinar%20o%20plano%20Classe%20A" class="block bg-green-600 hover:bg-green-700 text-white text-center py-2 rounded-lg font-medium transition duration-300">
+          Assinar Plano
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-8 text-center">
+      <p class="text-gray-600">* Fidelidade de 2 anos = 10% de desconto em todos os planos</p>
+      <p class="text-gray-600 mt-2">** Vagas limitadas por região para garantir qualidade no atendimento</p>
+    </div>
   </div>
-  <!-- Cabeçalho Responsivo -->
-  <header>
-    <div class="container">
-      <div class="logo">
-        <img src="img/Rafael SOS.png" alt="Logo Rafael SOS"> <!-- Substitua pelo caminho correto da logo -->
-      </div>
-
-      <!-- Checkbox para ativar o menu móvel -->
-      <input type="checkbox" id="menu-toggle">
-      <label for="menu-toggle" class="menu-icon">&#9776;</label>
-
-      <!-- Menu de Navegação -->
-      <nav>
-        <ul class="menu">
-          <li><a href="#home">Início</a></li>
-          <li><a href="#about">Sobre</a></li>
-          <li><a href="#services">Serviços</a></li>
-          <li><a href="#portfolio">Portfólio</a></li>
-          <li><a href="#contact">Contato</a></li>
-          <li><a href="#parceria">Parceria</a></li> <!-- Novo item do menu -->
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-
-  <!-- Seção Hero -->
-  <section class="hero">
-    <div class="overlay">
-      <h1>Você Preciso de um profissional com multiplas habilidade? </h1>
-      <p><strong>RAFAEL SOS</strong> é sua escolha <strong> CERTA!</strong></p>
-    </div>
-    <img src="Img/bonego.png" alt="Boneco animado" class="boneco">
-  </section>
-
-
-  <!-- Slider de Mensagens -->
-  <section class="slider-container">
-    <div class="slider">
-      <div class="slide">Tradição e Qualidade em Cada Detalhe</div>
-      <div class="slide">Seu serviço é pequeno? é com RAFAEL SOS</div>
-      <div class="slide">Precisa de um profissional? é com RAFAEL SOS</div>
-      <!-- Duplicação para efeito infinito -->
-      <div class="slide">Tradição e Qualidade em Cada Detalhe</div>
-      <div class="slide">Seu serviço é pequeno? é com RAFAEL SOS</div>
-      <div class="slide">Precisa de um profissional? é com RAFAEL SOS</div>
-    </div>
-  </section>
-
-  <!-- Banner de Chamada à Ação -->
-  <section class="banner">
-    <h2>Estou Pronto Para Iniciar Seu Serviço</h2>
-    <p>Contate-nos e vamos planejar juntos o sucesso da sua obra</p>
-    <a href="#contact" class="cta-btn">Solicite um Orçamento</a>
-  </section>
-
-  <!-- Bloco Dinâmico Criativo -->
-  <section class="dynamic-block">
-    <p><strong>Não deixe Seu serviço com qualquer Um</strong></p>
-    <p>Escolha o Melhor de Goias! <br><strong>RAFAEL SOS</strong>!</p>
-  </section>
-
-  <!-- Seção Sobre -->
-  <section id="about" class="section">
-    <h2>Quem Somos</h2>
-    <p>Sou especialistas em construção e reformas de alta qualidade, com anos de experiência e comprometido com os
-      melhores resultados.</p>
-  </section>
-
-  <!-- Seção Serviços -->
-  <section id="services" class="section">
-    <h2>Nossos Serviços</h2>
-    <div class="services-grid">
-      <div class="service">
-        <h3>Construção de Obras</h3>
-        <p>Realizamos projetos de construção de alta qualidade, desde pequenas reformas, Seviços diversos no ramo da
-          construção civil.</p>
-      </div>
-      <div class="service">
-        <h3>Reformas Residenciais</h3>
-        <p>Transformamos seu lar com reformas que agregam valor e bem-estar, com acabamento impecável.</p>
-      </div>
-      <div class="service">
-        <h3>Instalações Elétricas</h3>
-        <p>Garantimos instalações elétricas seguras e eficientes, atendendo às normas mais rigorosas.</p>
-      </div>
-      <div class="service">
-        <h3>Serviços de Pintura</h3>
-        <p>Realizamos Pintura e pente fino. Vamos fazer Uma repaginada no Seu imovel?. <strong>TEMOS DISCONTOS PARA
-            EMPRESAS..</strong>.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Seção Portfólio -->
-  <section id="portfolio" class="section">
-    <h2>Nosso Portfólio</h2>
-    <div class="portfolio-grid">
-      <div class="portfolio-item">
-        <img src="img/Design sem nome/1.png" alt="Projeto 1">
-      </div>
-      <div class="portfolio-item">
-        <img src="img/Design sem nome/2.png" alt="Projeto 2">
-      </div>
-      <div class="portfolio-item">
-        <img src="img/Design sem nome/3.png" alt="Projeto 3">
-      </div>
-      <div class="portfolio-item">
-        <img src="img/Design sem nome/4.png" alt="Projeto 4">
-      </div>
-      <div class="portfolio-item">
-        <img src="img/Design sem nome/5.png" alt="Projeto 5">
-      </div>
-      <div class="portfolio-item">
-        <img src="img/Design sem nome/6.png" alt="Projeto 6">
-      </div>
-      <div class="portfolio-item">
-        <img src="img/Design sem nome/7.png" alt="Projeto 7">
-      </div>
-      <div class="portfolio-item">
-        <img src="img/Design sem nome/8.png" alt="Projeto 8">
-      </div>
-      <div class="portfolio-item">
-        <img src="img/Design sem nome/d.png" alt="Projeto 6">
-      </div>
-      <div class="portfolio-item">
-        <img src="img/Design sem nome/s.png" alt="Projeto 7">
-      </div>
-      <div class="portfolio-item">
-        <img src="img/Design sem nome/f.png" alt="Projeto 8">
-      </div>
-      <div class="portfolio-item">
-        <img src="img/Design sem nome/1.jpg" alt="Projeto 8">
-      </div>
-      <div class="portfolio-item">
-        <img src="img/Design sem nome/2.jpg" alt="Projeto 6">
-      </div>
-      <div class="portfolio-item">
-        <img src="img/Design sem nome/k.png" alt="Projeto 7">
-      </div>
-      <div class="portfolio-item">
-        <img src="img/Design sem nome/4.jpg" alt="Projeto 8">
-      </div>
-    </div>
-  </section>
-
-  <!-- Seção Parceria -->
-  <section id="parceria" class="section">
-    <h2>Seja Nosso Parceiro</h2>
-    <p>Junte-se a nós e expanda suas oportunidades de negócios. Oferecemos parcerias estratégicas para profissionais e
-      empresas.</p>
-
-    <div class="parceria-container">
-      <div class="parceria-item">
-        <h3>Profissionais</h3>
-        <p>Se você é um especialista na área e quer oferecer seus serviços, entre em contato.</p>
-      </div>
-
-      <div class="parceria-item">
-        <h3>Empresas</h3>
-        <p>Grandes e pequenas empresas podem se unir ao nosso projeto para crescerem juntas.</p>
-      </div>
-    </div>
-
-    <a href="#contact" class="parceria-btn">Quero ser parceiro</a>
-  </section>
-
-  <!-- Seção Depoimentos -->
-  <section id="testimonials" class="section">
-    <h2>O que nossos clientes dizem</h2>
-    <div class="testimonial">
-      <p>"O serviço foi impecável e superou nossas expectativas. A equipe foi extremamente profissional em todas as
-        fases do projeto."</p>
-      <p>- João Silva</p>
-    </div>
-  </section>
-
-  <section id="nossos-servicos" class="section">
-    <h2 class="section-title">Nossos Serviços</h2>
-    <p class="section-subtitle">Excelência em cada detalhe, do planejamento à execução.</p>
-
-    <div class="services-grid">
-      <!-- Serviço 1: Reformas -->
-      <div class="service">
-        <div class="service-icon">🏠</div>
-        <h3>Reformas e Ampliações</h3>
-        <p>Transformamos espaços com qualidade e segurança.</p>
-        <ul>
-          <li>Reformas residenciais e comerciais</li>
-          <li>Ampliações e modernizações</li>
-          <li>Melhorias em áreas de lazer</li>
-          <li>Construção e manutenção de muros e calçadas</li>
-        </ul>
-      </div>
-
-      <!-- Serviço 2: Pintura -->
-      <div class="service">
-        <div class="service-icon">🎨</div>
-        <h3>Pintura Profissional</h3>
-        <p>Acabamentos impecáveis para renovar seu ambiente.</p>
-        <ul>
-          <li>Pintura acetinada e lisa</li>
-          <li>Texturas e efeitos especiais</li>
-          <li>Reformas em pintura</li>
-          <li>Revitalização de fachadas</li>
-        </ul>
-      </div>
-
-      <!-- Serviço 3: Elétrica -->
-      <div class="service">
-        <div class="service-icon">⚡</div>
-        <h3>Instalação Elétrica</h3>
-        <p>Soluções seguras e eficientes para sua instalação elétrica.</p>
-        <ul>
-          <li>Instalações residenciais e comerciais</li>
-          <li>Manutenção elétrica preventiva e corretiva</li>
-          <li>Quadros de distribuição</li>
-          <li>Trabalho exclusivo com instalações monofásicas</li>
-        </ul>
-      </div>
-
-      <!-- Serviço 4: Diversos -->
-      <div class="service">
-        <div class="service-icon">🔧</div>
-        <h3>Serviços Complementares</h3>
-        <p>Pequenos serviços que fazem toda a diferença.</p>
-        <ul>
-          <li>Instalação de forro PVC</li>
-          <li>Pequenos reparos e ajustes</li>
-          <li>Construção de barracões</li>
-          <li>Calçadas e acabamentos</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-
-<!-- Seção Contato -->
-<section id="contact" class="section">
-  <h2>Contato</h2>
-  <p>Fale conosco e solicite seu orçamento sem compromisso.</p>
-
-  <form id="formulario-contato">
-    <div class="form-group">
-      <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
-    </div>
-
-    <div class="form-group">
-      <input type="tel" id="telefone" name="telefone" required placeholder="(XX) XXXXX-XXXX" pattern="\(?\d{2}\)?\s?\d{4,5}-?\d{4}">
-    </div>
-
-    <div class="form-group">
-      <input type="email" id="email" name="email" required placeholder="Seu e-mail">
-    </div>
-
-    <div class="form-group">
-      <textarea id="endereco" name="endereco" rows="2" required placeholder="Endereço completo"></textarea>
-    </div>
-
-    <div class="form-group">
-      <select id="tipo-servico" name="tipo-servico" required>
-        <option value="">Selecione o serviço desejado</option>
-        <option>Manutenção elétrica</option>
-        <option>Reparo hidráulico</option>
-        <option>Troca de fechadura</option>
-        <option>Pintura</option>
-        <option>Outros</option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <label>Urgência:</label>
-      <label><input type="radio" name="urgencia" value="Urgente" required> Urgente</label>
-      <label><input type="radio" name="urgencia" value="Normal"> Normal</label>
-    </div>
-
-    <div class="form-group">
-      <label>Preferência de contato:</label>
-      <label><input type="checkbox" name="contato" value="Telefone" checked> Telefone</label>
-      <label><input type="checkbox" name="contato" value="E-mail"> E-mail</label>
-      <label><input type="checkbox" name="contato" value="WhatsApp"> WhatsApp</label>
-    </div>
-
-    <div class="form-group">
-      <textarea id="mensagem" name="mensagem" rows="4" placeholder="Mensagem ou detalhes adicionais..."></textarea>
-    </div>
-
-    <button type="submit" class="cta-btn">Enviar</button>
-  </form>
 </section>
 
-<!-- Rodapé -->
-<footer>
-  <div class="footer-content">
-    <div class="footer-section">
-      <h3>Rafael SOS Pedreiro</h3>
-      <p>Comprometidos com a excelência e qualidade em todas as obras.</p>
-    </div>
-    <div class="footer-section">
-      <h3>Links Rápidos</h3>
-      <p><a href="#about">Sobre</a></p>
-      <p><a href="#services">Serviços</a></p>
-      <p><a href="#portfolio">Portfólio</a></p>
-      <p><a href="#contact">Contato</a></p>
-    </div>
-    <div class="footer-section">
-      <h3>Contato</h3>
-      <p>Email: sosresolverr@gmail.com</p>
-      <p>Telefone: (62) 98555-8320</p>
-    </div>
-  </div>
-</footer>
+    <!-- Benefícios Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-dark mb-4">Por que contratar nossos serviços?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Tranquilidade e segurança para você e sua família.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Benefício 1 -->
+                <div class="text-center">
+                    <div class="bg-primary bg-opacity-10 text-primary w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-piggy-bank text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">Economia Real</h3>
+                    <p class="text-gray-600">Pequenos reparos agora evitam grandes gastos depois. Nossos planos são acessíveis e previnem problemas maiores.</p>
+                </div>
+                
+                <!-- Benefício 2 -->
+                <div class="text-center">
+                    <div class="bg-primary bg-opacity-10 text-primary w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">Segurança Garantida</h3>
+                    <p class="text-gray-600">Profissionais qualificados e equipamentos adequados para garantir a segurança da sua família e do seu patrimônio.</p>
+                </div>
+                
+                <!-- Benefício 3 -->
+                <div class="text-center">
+                    <div class="bg-primary bg-opacity-10 text-primary w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-home text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">Valorização do Imóvel</h3>
+                    <p class="text-gray-600">Sua casa sempre bem cuidada mantém e aumenta seu valor de mercado. Um investimento inteligente.</p>
+                </div>
+                
+                <!-- Benefício 4 -->
+                <div class="text-center">
+                    <div class="bg-primary bg-opacity-10 text-primary w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-star text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">Exclusividade</h3>
+                    <p class="text-gray-600">Planos Premium com atendimento VIP 24h e prioridade absoluta para clientes selecionados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script>
-  setTimeout(() => {
-    document.getElementById("preloader").style.display = "none";
-    let siteContent = document.getElementById("site-content");
-    siteContent.style.display = "block";
-    siteContent.style.opacity = "1"; // Transição suave de entrada
-  }, 4500);
-</script>
+    <!-- Depoimentos Section -->
+    <section id="depoimentos" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-dark mb-4">O que nossos clientes dizem</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">A satisfação dos nossos clientes é nossa maior recompensa.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Depoimento 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Cliente satisfeita" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-dark">Maria Silva</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Contratei o plano Classe C e foi a melhor decisão. Sempre que preciso, estão disponíveis e resolvem rapidamente. Minha casa nunca esteve tão bem cuidada!"</p>
+                </div>
+                
+                <!-- Depoimento 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente satisfeito" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-dark">José Oliveira</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Precisei de um serviço emergencial de hidráulica e me atenderam em menos de 2 horas. Profissionais competentes e preço justo. Recomendo a todos!"</p>
+                </div>
+                
+                <!-- Depoimento 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Cliente satisfeita" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-dark">Ana Costa</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Fiz uma reforma completa no banheiro e ficou perfeito! O orçamento foi detalhado e cumpriram todos os prazos. Já indiquei para várias amigas."</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script>
-  document.getElementById("formulario-contato").addEventListener("submit", function (e) {
-    e.preventDefault();
+    <!-- Sobre Section -->
+    <section id="sobre" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-12">
+                    <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Equipe de construção" class="rounded-lg shadow-lg w-full">
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-bold text-dark mb-6">Sobre Nós</h2>
+                    <p class="text-gray-600 mb-4">A MOOB Manutenção & Construção nasceu da necessidade de oferecer serviços de pedreiro e manutenção residencial com profissionalismo, qualidade e preço justo para a população de Aparecida de Goiânia e região.</p>
+                    <p class="text-gray-600 mb-4">Com mais de 10 anos de experiência no mercado, nossa equipe é formada por profissionais qualificados e comprometidos com a excelência em cada serviço prestado.</p>
+                    <p class="text-gray-600 mb-6">Nossa missão é simplificar a vida dos nossos clientes, oferecendo soluções práticas e acessíveis para manutenção e reformas residenciais, com atendimento personalizado e garantia de satisfação.</p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#planos" class="bg-primary hover:bg-blue-800 text-white px-6 py-3 rounded-lg font-bold text-center transition duration-300">
+                            Conheça Nossos Planos
+                        </a>
+                        <a href="https://wa.me/5562985558320" class="bg-gray-200 hover:bg-gray-300 text-dark px-6 py-3 rounded-lg font-bold text-center transition duration-300">
+                            <i class="fab fa-whatsapp mr-2"></i> Fale Conosco
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    const nome = document.getElementById("nome").value;
-    const telefone = document.getElementById("telefone").value;
-    const email = document.getElementById("email").value;
-    const endereco = document.getElementById("endereco").value;
-    const tipoServico = document.getElementById("tipo-servico").value;
-    const urgencia = document.querySelector('input[name="urgencia"]:checked')?.value || "";
-    const contatoElems = document.querySelectorAll('input[name="contato"]:checked');
-    const mensagem = document.getElementById("mensagem").value;
+    <!-- Contato Section -->
+    <section id="contato" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-dark mb-4">Entre em Contato</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Estamos à disposição para tirar suas dúvidas e atender suas necessidades.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <form id="orcamento" class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-dark mb-6">Peça um Orçamento</h3>
+                        
+                        <div class="mb-4">
+                            <label for="nome" class="block text-gray-700 font-medium mb-2">Nome</label>
+                            <input type="text" id="nome" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="telefone" class="block text-gray-700 font-medium mb-2">Telefone</label>
+                            <input type="tel" id="telefone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">E-mail</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="servico" class="block text-gray-700 font-medium mb-2">Serviço Desejado</label>
+                            <select id="servico" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                                <option value="">Selecione um serviço</option>
+                                <option value="reforma">Reforma e Acabamento</option>
+                                <option value="pintura">Pintura e Reparos</option>
+                                <option value="eletrica">Elétrica e Hidráulica</option>
+                                <option value="muro">Construção de Muros</option>
+                                <option value="emergencia">Manutenção Emergencial</option>
+                                <option value="plano">Assinatura de Plano</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="mensagem" class="block text-gray-700 font-medium mb-2">Mensagem</label>
+                            <textarea id="mensagem" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-primary hover:bg-blue-800 text-white py-3 rounded-lg font-bold transition duration-300">
+                            Enviar Solicitação
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-md h-full">
+                        <h3 class="text-xl font-bold text-dark mb-6">Nossos Contatos</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-primary text-white p-2 rounded-full mr-4">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark mb-1">Telefone</h4>
+                                    <a href="tel:62985558320" class="text-gray-600 hover:text-primary">(62) 98555-8320</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary text-white p-2 rounded-full mr-4">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark mb-1">WhatsApp</h4>
+                                    <a href="https://wa.me/5562985558320" class="text-gray-600 hover:text-primary">(62) 98555-8320</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary text-white p-2 rounded-full mr-4">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark mb-1">E-mail</h4>
+                                    <a href="mailto:contato@pedreiro.com.br" class="text-gray-600 hover:text-primary">contato@pedreiro.com.br</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary text-white p-2 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark mb-1">Endereço</h4>
+                                    <p class="text-gray-600">Av. Epiaçuba, Qd 20 Lt 14<br>Aparecida de Goiânia - GO</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary text-white p-2 rounded-full mr-4">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark mb-1">Horário de Atendimento</h4>
+                                    <p class="text-gray-600">Segunda a Sexta: 8h às 18h<br>Sábado: 8h às 12h</p>
+                                </div>
+                            </div>
+                            
+                            <div class="pt-4">
+                                <h4 class="font-bold text-dark mb-3">Redes Sociais</h4>
+                                <div class="flex space-x-4">
+                                    <a href="#" class="bg-gray-200 hover:bg-gray-300 text-dark w-10 h-10 rounded-full flex items-center justify-center">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#" class="bg-gray-200 hover:bg-gray-300 text-dark w-10 h-10 rounded-full flex items-center justify-center">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="#" class="bg-gray-200 hover:bg-gray-300 text-dark w-10 h-10 rounded-full flex items-center justify-center">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    let preferenciaContato = [];
-    contatoElems.forEach(el => preferenciaContato.push(el.value));
-    preferenciaContato = preferenciaContato.join(", ");
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary text-white p-2 rounded-lg mr-3">
+                            <i class="fas fa-hammer text-2xl"></i>
+                        </div>
+                        <h2 class="text-xl font-bold">MOOB <span class="text-primary">Manutenção & Construção</span></h2>
+                    </div>
+                    <p class="text-gray-400 max-w-xs">Serviços profissionais de pedreiro e manutenção residencial em Aparecida de Goiânia e região.</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Links</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#inicio" class="text-gray-400 hover:text-white">Início</a></li>
+                            <li><a href="#servicos" class="text-gray-400 hover:text-white">Serviços</a></li>
+                            <li><a href="#planos" class="text-gray-400 hover:text-white">Planos</a></li>
+                            <li><a href="#sobre" class="text-gray-400 hover:text-white">Sobre</a></li>
+                            <li><a href="#contato" class="text-gray-400 hover:text-white">Contato</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Serviços</h3>
+                        <ul class="space-y-2">
+                            <li><a href="reforma.html" class="text-gray-400 hover:text-white">Reformas</a></li>
+                            <li><a href="pintura" class="text-gray-400 hover:text-white">Pintura</a></li>
+                            <li><a href="eletrica.html" class="text-gray-400 hover:text-white">Elétrica</a></li>
+                            <li><a href="hidraulica.html" class="text-gray-400 hover:text-white">Hidráulica</a></li>
+                            <li><a href="emergencial.html" class="text-gray-400 hover:text-white">Emergências</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Contato</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-phone-alt text-gray-400 mr-2"></i>
+                                <a href="tel:62985558320" class="text-gray-400 hover:text-white">(62) 98555-8320</a>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-envelope text-gray-400 mr-2"></i>
+                                <a href="mailto:contato@pedreiro.com.br" class="text-gray-400 hover:text-white">contato@pedreiro.com.br</a>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-gray-400 mr-2"></i>
+                                <span class="text-gray-400">Aparecida de Goiânia - GO</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 MOOB Manutenção & Construção. Todos os direitos reservados.</p>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-    const msg = `*Novo Orçamento pelo Site*%0A
-*Nome:* ${nome}%0A
-*Telefone:* ${telefone}%0A
-*Email:* ${email}%0A
-*Endereço:* ${endereco}%0A
-*Serviço:* ${tipoServico}%0A
-*Urgência:* ${urgencia}%0A
-*Preferência de contato:* ${preferenciaContato}%0A
-*Mensagem:* ${mensagem}`;
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/5562985558320" class="whatsapp-button bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
 
-    const numeroWhatsApp = "5562985558320"; // Número no formato internacional
-    const url = `https://wa.me/${numeroWhatsApp}?text=${msg}`;
-
-    window.open(url, "_blank");
-  });
-</script>
-
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Obrigado pelo seu contato! Entraremos em breve em contato com você.');
+            this.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
-
